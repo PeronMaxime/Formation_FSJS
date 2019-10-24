@@ -1,0 +1,48 @@
+<!--
+L'utilisation d'une police se fait au moyen de la déclaration de style suivante :
+p{
+	font-family : nomPolice1, nomPolice2, nomPolice 3;
+}
+C'est la première police déclarée qui va être utilisée si elle se trouve sur le poste client. Si celle-ci n'est pas présente, ce sera la seconde police et ainsi de suite.
+De ce fait, dans le cas où aucune police ne serait présente; à la fin de la déclaration des différentes polices, on ajoute toujours une police générique :
+_serif : police avec empattement.
+_sans-serif : police sans empattement.
+
+Parmi les polices les plus courantes (sur Windows, Mac/iOS et Androïd), on trouve :
+    Arial,  Arial Black,  Comic Sans MS,  Courier New,  Georgia, Impact, Times New Roman, Trebuchet MS, Verdana.
+
+Dans la déclaration des polices, on met les noms composés entre guillemets :
+	font-family : "Arial Black", Verdana, san-serif;
+-->
+
+<!--
+	1 - Créez un document contenant deux balises h1.
+	2 - Chaque balise h1 est suivie de deux paragraphes.
+	3 - Appliquez une police différente à chaque balise.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		h1{
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		}
+		p{
+			font-family: 'Courier New', Courier, monospace;
+		}
+		
+	</style>
+</head>
+<body>
+	<h1>Titre</h1>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore sint fuga provident nemo ab? Quia accusantium, quod officiis natus temporibus sapiente itaque nemo magnam iusto necessitatibus accusamus eligendi obcaecati labore?</p>
+	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, perspiciatis earum doloribus blanditiis, reiciendis maiores animi ipsum vitae iure quidem tenetur sapiente necessitatibus non laudantium asperiores dolor minima eius libero?</p>
+	<h1>Titre</h1>
+	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis asperiores iure voluptates consequatur laboriosam sint vel impedit soluta ipsam odio natus tenetur dolore doloribus id, iusto cum dolorem architecto earum?</p>
+	<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis asperiores iure voluptates consequatur laboriosam sint vel impedit soluta ipsam odio natus tenetur dolore doloribus id, iusto cum dolorem architecto earum?</p>
+</body>
+</html>

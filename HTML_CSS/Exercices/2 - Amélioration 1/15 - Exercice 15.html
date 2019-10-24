@@ -1,0 +1,38 @@
+<!--
+Quand une balise ou une class se retrouve plusieurs fois dans la page, il est possible de cibler seulement certaines balises ou class en indiquant une partie ou la totalité du chemin pour l'atteindre.
+Par exemple,
+
+p code{
+	color: blue;
+}
+
+p .maBalise{
+	background-color: green;
+}
+-->
+
+<!--
+	1 - Créez un document contenant trois paragraphes. Associez une class seulement au premier.
+	2 - Intégrez une citation dans chaque paragraphe (<cite>)
+	3 - Donnez une couleur différente uniquement à la citation dans le paragraphe avec une class.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		.para cite{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<p class="para"><cite>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti reprehenderit magnam commodi quidem quae veritatis exercitationem? Aperiam officia dolor, quibusdam eligendi officiis voluptates molestias deserunt autem adipisci earum quasi qui.</cite></p>
+	<p><cite>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam illo qui ad voluptas, repellendus, doloremque totam beatae error veritatis vero expedita, reiciendis amet temporibus omnis placeat cupiditate sapiente tempore aliquam?</cite></p>
+	<p><cite>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus tempore beatae quas molestias. Dignissimos ratione voluptatibus deserunt, optio incidunt corporis maxime delectus error pariatur dicta aliquid minus consequuntur earum voluptates.</cite></p>
+</body>
+</html>

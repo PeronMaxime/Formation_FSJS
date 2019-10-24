@@ -1,0 +1,55 @@
+<!--
+Dans le fragment de page suivant,
+<h1>Un titre</h1>
+<p>Paragraphe 1</p>
+<p>Paragraphe 2</p>
+
+Quand on écrit, par exemple,
+
+h1 p {
+	color: yellow;
+}
+
+,tous les p auront la couleur du texte en jaune.
+Si on écrit,
+
+h1+p {
+	color: yellow;
+}
+
+seul le premier p sera en jaune.
+-->
+
+<!--
+	1 - Créez un document contenant un titre h1 suivi de deux h2.
+	2 - Chaque h2 précède deux p.
+	3 - Mettez le premier h2 dans une autre couleur.
+	4 - Mettez le premier p suivant le premier h2 dans une autre couleur.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		h1+h2{
+			color: red;
+		}
+		h1+h2+p{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Titre</h1>
+	<h2>Sous titre 1</h2>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ratione accusamus quae culpa modi est laboriosam ex neque, labore molestias enim ipsam magni beatae similique ab dolores vitae repellendus. Laborum?</p>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis nisi blanditiis culpa quidem, velit quasi, atque nulla architecto excepturi earum ratione odio ducimus debitis, ad quo a. Sapiente, nisi. Aliquam?</p>
+	<h2>Sous titre 2</h2>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, hic aut unde nesciunt quae, eos earum maiores iusto facilis nulla nihil commodi eligendi, voluptas officia. Repudiandae rerum id minus earum.</p>
+	<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, minus! Non ullam illo ducimus architecto dolorem temporibus? Inventore quia velit nulla enim commodi dolorem, minus dolorum perferendis molestiae. Mollitia, doloribus.</p>
+</body>
+</html>

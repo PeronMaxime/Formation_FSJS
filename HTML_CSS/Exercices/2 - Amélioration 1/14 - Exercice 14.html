@@ -1,0 +1,65 @@
+<!--
+Les attributs de class et d'id permettent de mettre un nom sur une balise pour la viser précisément en CSS.
+
+Par exemple, <p class="paragraphe-important">. Le sélecteur de class peut être utilisé plusieurs fois dans le même document contrairement à l'id qui doit être unique.
+
+Pour les balises paires, il est toujours écrit dans la balise ouvrante.
+
+Enfin, le nom ne doit pas contenir d'espace (lettre, chiffre ainsi que - et _ uniquement) et ne peut commencer que par une lettre.
+Par exemple, class="mon_etiquette" id="Balise21".
+
+En css, pour cibler l'attribut class="element" on écrit :
+.element {
+
+}
+
+En css, pour cibler l'attribut id="cible" on écrit
+#cible {
+
+}
+-->
+
+<!--
+1 - Créez cinq binômes titre-paragraphe.
+2 - À l'aide de deux class, changez la couleur de police deux paragraphes et la couleur d'arrière plan de deux titres.
+3 - Grâce à deux id, changez la couleur d'arrière plan de l'un des titres visé par une class et la couleur de police de l'un des paragraphes visé par une class.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .class_titre{
+            background-color: pink;
+        }
+
+        #id_titre{
+            background-color: steelblue;
+        }
+
+        .class_para{
+            color: red;
+        }
+
+        #id_para{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="class_titre" id="id_titre">Titre</h1>
+    <p class="class_para" id="id_para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, suscipit eum beatae totam minus ad vero minima temporibus similique nemo in iure enim eveniet. Nam cupiditate mollitia earum omnis consequatur!</p>
+    <h1 class="class_titre">Titre</h1>
+    <p class="class_para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, ipsa harum? Velit iste quae accusantium error commodi perspiciatis voluptatum a, blanditiis dignissimos corporis facilis omnis reiciendis, dolore amet unde incidunt.</p>
+    <h1>Titre</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe reprehenderit eum harum ex dolorum voluptas voluptates voluptatem aliquam? Distinctio eveniet fugiat architecto sapiente ipsum facere optio totam nulla exercitationem cupiditate.</p>
+    <h1>Titre</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae earum dicta ex unde fugiat, distinctio ipsum fuga similique asperiores, temporibus expedita obcaecati dignissimos cumque ipsam. Itaque exercitationem corrupti at. Tempora?</p>
+    <h1>Titre</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit praesentium eum ea, quia explicabo illo accusamus ratione doloremque neque deserunt mollitia quis culpa inventore autem magnam vero alias nesciunt quisquam.</p>
+</body>
+</html>
