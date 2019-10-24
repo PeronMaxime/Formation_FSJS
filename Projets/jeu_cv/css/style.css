@@ -1,0 +1,19 @@
+@font-face{
+    font-family: ActionMan;
+    src: url("../fonts/Action_Man-webfont.woff");
+}
+
+h1 {
+    text-align: center;
+    font-family: ActionMan;
+}
+
+#stick_man{
+    margin-left: 40%;
+}
+
+.buisson{
+    position: absolute;
+    width: 20%;
+    height: 20%;
+}
