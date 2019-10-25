@@ -26,3 +26,105 @@
 <!--
 	Créez une page s'adaptant en fonction de la largeur en suivant la maquette Exercice 59.pdf. L'affichage supérieur à 1024px est la mise en page de base.
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body{
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+    }
+    h1{
+      background-color: blue;
+      margin: 0;
+    }
+    #bloc1{
+      background-color: green;
+    }
+    #bloc2{
+      background-color: orange;
+    }
+    #bloc3{
+      background-color: red;
+    }
+    #pied1{
+      background-color: lightyellow;
+    }
+    #pied2{
+      background-color: lightblue;
+    }
+    @media (max-width: 640px){
+      section{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #bloc1,#bloc2{
+        width: 50%;
+      }
+      #bloc3{
+        flex-basis: 100%;
+      }
+    }
+    @media (min-width: 641px) and (max-width: 1024px){
+      section{
+        display: flex;
+        flex-wrap: wrap;
+      }
+      #bloc1,#bloc2{
+        flex-basis: 50%;
+      }
+      #bloc3{
+        flex-basis: 100%;
+      }
+      footer{
+        display: flex;
+      }
+      #pied1{
+        flex-basis: 50%;
+      }
+      #pied2{
+        flex-basis: 50%;
+      }
+    }
+    @media (min-width: 1025px){
+      section{
+        display: flex;
+      }
+      #bloc1,#bloc2,#bloc3{
+        flex-basis: 33%;
+      }
+      footer{
+        display: flex;
+      }
+      #pied1{
+        flex-basis: 50%;
+      }
+      #pied2{
+        flex-basis: 50%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>En-tête</h1>
+  </header>
+
+  <section>
+    <div id="bloc1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas tempore temporibus architecto molestias expedita doloribus aliquam veritatis cum velit dignissimos. Molestiae dolor maxime dolores quibusdam dolorum deserunt, neque assumenda aspernatur ex totam error debitis architecto! Laborum eligendi, rem perferendis at esse eius laudantium iure incidunt maiores culpa debitis obcaecati, beatae cupiditate itaque officia non reprehenderit aperiam. Totam minima alias maiores recusandae earum repellendus blanditiis consectetur, reiciendis, repellat perferendis et aperiam quae voluptatum odit dolorum, aliquam libero iusto laudantium. Necessitatibus doloremque doloribus omnis, laborum ut quis perspiciatis corporis cumque cum animi a, pariatur harum! Nostrum iste quos tempore fuga saepe repellat?</div>
+    <div id="bloc2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas tempore temporibus architecto molestias expedita doloribus aliquam veritatis cum velit dignissimos. Molestiae dolor maxime dolores quibusdam dolorum deserunt, neque assumenda aspernatur ex totam error debitis architecto! Laborum eligendi, rem perferendis at esse eius laudantium iure incidunt maiores culpa debitis obcaecati, beatae cupiditate itaque officia non reprehenderit aperiam. Totam minima alias maiores recusandae earum repellendus blanditiis consectetur, reiciendis, repellat perferendis et aperiam quae voluptatum odit dolorum, aliquam libero iusto laudantium. Necessitatibus doloremque doloribus omnis, laborum ut quis perspiciatis corporis cumque cum animi a, pariatur harum! Nostrum iste quos tempore fuga saepe repellat?</div>
+    <div id="bloc3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas tempore temporibus architecto molestias expedita doloribus aliquam veritatis cum velit dignissimos. Molestiae dolor maxime dolores quibusdam dolorum deserunt, neque assumenda aspernatur ex totam error debitis architecto! Laborum eligendi, rem perferendis at esse eius laudantium iure incidunt maiores culpa debitis obcaecati, beatae cupiditate itaque officia non reprehenderit aperiam. Totam minima alias maiores recusandae earum repellendus blanditiis consectetur, reiciendis, repellat perferendis et aperiam quae voluptatum odit dolorum, aliquam libero iusto laudantium. Necessitatibus doloremque doloribus omnis, laborum ut quis perspiciatis corporis cumque cum animi a, pariatur harum! Nostrum iste quos tempore fuga saepe repellat?</div>
+  </section>
+
+  <footer>
+    <div id="pied1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas tempore temporibus architecto molestias expedita doloribus aliquam veritatis cum velit dignissimos. Molestiae dolor maxime dolores quibusdam dolorum deserunt, neque assumenda aspernatur ex totam error debitis architecto! Laborum eligendi, rem perferendis at esse eius laudantium iure incidunt maiores culpa debitis obcaecati, beatae cupiditate itaque officia non reprehenderit aperiam. Totam minima alias maiores recusandae earum repellendus blanditiis consectetur, reiciendis, repellat perferendis et aperiam quae voluptatum odit dolorum, aliquam libero iusto laudantium. Necessitatibus doloremque doloribus omnis, laborum ut quis perspiciatis corporis cumque cum animi a, pariatur harum! Nostrum iste quos tempore fuga saepe repellat?</div>
+    <div id="pied2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas tempore temporibus architecto molestias expedita doloribus aliquam veritatis cum velit dignissimos. Molestiae dolor maxime dolores quibusdam dolorum deserunt, neque assumenda aspernatur ex totam error debitis architecto! Laborum eligendi, rem perferendis at esse eius laudantium iure incidunt maiores culpa debitis obcaecati, beatae cupiditate itaque officia non reprehenderit aperiam. Totam minima alias maiores recusandae earum repellendus blanditiis consectetur, reiciendis, repellat perferendis et aperiam quae voluptatum odit dolorum, aliquam libero iusto laudantium. Necessitatibus doloremque doloribus omnis, laborum ut quis perspiciatis corporis cumque cum animi a, pariatur harum! Nostrum iste quos tempore fuga saepe repellat?</div>
+  </footer>
+</body>
+</html>

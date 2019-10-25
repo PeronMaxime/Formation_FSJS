@@ -15,7 +15,58 @@ Pour appliquer une largeur spécifique sur chaque élément, on utilise la propr
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Exercice 57</title>
+    <title>Exercice 57</title>
+    <style>
+      body{
+        background-color: lightsteelblue;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      h1{
+        background-color: steelblue;
+        color: sandybrown;
+        font-style: italic;
+        font-size: 36px;
+        margin: 0;
+        text-align: center;
+      }
+      nav{
+        background-color: steelblue;     
+      }
+      nav ul{
+
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+      nav ul li{
+        flex-basis: 25%;
+      }
+      a{
+        color: sandybrown;        
+        text-decoration: none;
+      }
+      section{
+        background-color: white;
+        display: flex;
+        margin-left: 10%;
+        width: 80%;
+      }
+      section h2{
+        text-align: center;
+      }
+      #gauche{
+        flex-basis: 36%;
+        padding: 2%;
+      }
+      #droite{
+        flex: 56%;
+        padding: 2%;
+      }
+      
+    </style>
 	</head>
 	<body>
       <header>
@@ -23,10 +74,10 @@ Pour appliquer une largeur spécifique sur chaque élément, on utilise la propr
       </header>
       <nav>
         <ul>
-          <li><a href="">Accueil</a></li>
-          <li><a href="">Actualité</a></li>
-          <li><a href="">Informations</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="">ACCUEIL</a></li>
+          <li><a href="">ACTUALITÉ</a></li>
+          <li><a href="">INFORMATIONS</a></li>
+          <li><a href="">CONTACT</a></li>
         </ul>
       </nav>
       <section>
