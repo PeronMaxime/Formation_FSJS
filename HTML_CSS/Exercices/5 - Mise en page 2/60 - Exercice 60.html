@@ -96,6 +96,29 @@ L'ensemble de la mise en page est réalisée en flexbox et en mobile-first.
         flex-basis: 50%;
       }
     }
+
+    @media (min-width: 1025px){
+      section{
+        display: flex;
+        justify-content: space-between;
+      }
+      section article{
+        flex-basis: 45%;
+      }
+      aside{
+        display: flex;
+        flex: wrap;
+      }
+      .un,.deux{
+        flex-basis: 50%;
+      }
+      .trois,.quatre{
+        flex-basis: 100%;
+      }
+      aside div{
+        height: 400px;
+      }
+    }
     
   </style>
 </head>

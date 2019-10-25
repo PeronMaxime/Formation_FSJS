@@ -11,3 +11,45 @@
 	2 - Vous y insérez un h1 et quatre paragraphes.
 	3 - Disposez les paragraphes côte à côte, deux par ligne. Pour chaque ligne, donnez aux deux paragraphes présents une largeur différente.
  -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+     #conteneur{
+       display: grid;
+       grid-template-columns: 40% 60%;
+       grid-template-rows: auto;
+     }
+     #un{
+       grid-column: 1;
+       grid-row: 1;
+     }
+     #deux{
+       grid-column: 2;
+       grid-row: 1;
+     }
+     #trois{
+       grid-column: 1;
+       grid-row: 2;
+     }
+     #quatre{
+       grid-column: 2;
+       grid-row: 2;
+     }
+   </style>
+ </head>
+ <body>
+   <h1>Titre</h1>
+   <div id="conteneur">
+     <p id="un">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium ullam reprehenderit dolores dolorum distinctio itaque eaque excepturi. Explicabo necessitatibus iure vero assumenda alias aspernatur illo impedit! Itaque aliquid laudantium architecto?</p>
+     <p id="deux">Ad, at corrupti reprehenderit sed quibusdam ipsam, dolorum cumque commodi dolorem, consequatur tempora autem vel laboriosam incidunt accusantium dolore nobis nam eveniet placeat enim! Quae doloremque necessitatibus labore nulla ratione!</p>
+     <p id="trois">Voluptatum earum ea, ipsa molestias magni, delectus blanditiis quibusdam, rerum labore facilis ex. Fuga, cum nihil voluptatibus, dolor suscipit nostrum dolores aperiam asperiores, vero similique quam perspiciatis odit ratione quis!</p>
+     <p id="quatre">Saepe odio ab, voluptatem atque blanditiis non accusantium aliquam quisquam illo obcaecati eveniet consequuntur tenetur! Quisquam, sit ipsum magni blanditiis earum autem sequi laudantium ut enim repellendus excepturi maxime repellat?</p>
+   </div>
+ </body>
+ </html>

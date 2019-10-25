@@ -27,3 +27,36 @@
 	2 - Vous y insérez un h1 et trois paragraphes.
 	3 - Disposez les trois paragraphes côte à côte. Le premier paragraphe a une largeur égale à la moitié du conteneur. Le second et le troisième ont une largeur égale à un quart du conteneur.
  -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+     #conteneur{
+      display: grid;
+      grid-template-columns: 50% 25% 25%;
+     }
+     #un{
+       grid-column: 1;
+     }
+     #deux{
+       grid-column: 2;
+     }
+     #trois{
+       grid-column: 3;
+     }
+   </style>
+ </head>
+ <body>
+    <h1>Titre</h1>
+    <div id="conteneur">
+      <p id="un">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam natus iste architecto odit temporibus pariatur earum sequi commodi molestias, modi quos quis mollitia sit. Maxime blanditiis cupiditate dolores laudantium necessitatibus.</p>
+      <p id="deux">Nobis vitae similique vel excepturi optio in deserunt accusantium incidunt iusto, ex voluptas aut inventore itaque nulla corporis eveniet laborum, reiciendis placeat nemo, alias veritatis sequi ducimus. Exercitationem, accusamus vero.</p>
+      <p id="trois">Libero beatae suscipit sit odit, ex blanditiis ullam ut repudiandae velit ducimus veritatis, distinctio, nemo dolores sunt fugit incidunt. Quo iusto, a excepturi quod magnam reprehenderit sunt facere ipsam nobis?</p>
+    </div>
+ </body>
+ </html>
