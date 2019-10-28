@@ -1,28 +1,28 @@
-body{
-	margin: 0;
-	background-color: #3F89A6;
-	text-align: center;
-  font-family: Arial, Helvetica;
+body {
+  margin: 0;
+  background-color: #3F89A6;
+  text-align: center;
+  font-family: Arial, Helvetica
 }
 
-header{
+header {
   background-color: #205B73;
-  margin: 2% 0 0;
+  margin: 2% 0 0
 }
 
-header h1{
-	margin: 0 auto;
-	padding: 10px 0;
-	text-align: center;
-	font-style: italic;
-	font-size: 4em;
-	-moz-border-radius: 12px;
-	-webkit-border-radius: 12px;
-	border-radius: 12px;
-	color: #F2B077;
+header h1 {
+  margin: 0 auto;
+  padding: 10px 0;
+  text-align: center;
+  font-style: italic;
+  font-size: 4em;
+  -moz-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  color: #F2B077
 }
 
-nav{
+nav {
   position: absolute;
   width: 20%;
   background-color: #205B73;
@@ -30,43 +30,43 @@ nav{
   font-family: Arial, Helvetica;
   font-size: 1.5em;
   top: 160px;
-  height: 200px;
+  height: 200px
 }
 
-nav ul{
+nav ul {
   padding: 0;
-  background-color: #205B73;
+  background-color: #205B73
 }
 
-nav li{
+nav li {
   list-style-type: none;
   padding: 5px 5px 5px 0;
-  border-radius: 0 5px 5px 0;
+  border-radius: 0 5px 5px 0
 }
 
-nav a{
+nav a {
   text-transform: uppercase;
   text-decoration: none;
-	color: #F2B077;
+  color: #F2B077
 }
 
-section{
+section {
   margin: 0 6% 0 22%;
   background-color: #F6DDC8;
-  padding: 15px 10px 60px;
+  padding: 15px 10px 60px
 }
 
-section p{
-	text-align: justify;
-	margin: 15px 0;
+section p {
+  text-align: justify;
+  margin: 15px 0
 }
 
-img{
+img {
   width: 600px;
-  margin-top: 15%;
+  margin-top: 15%
 }
 
-#vert{
+#vert {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -75,10 +75,10 @@ img{
   border-radius: 80px 80px 80px 80px;
   background-color: green;
   border: 10px solid black;
-  z-index: 2;
+  z-index: 2
 }
 
-#rouge{
+#rouge {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -87,9 +87,9 @@ img{
   border-radius: 80px 80px 80px 80px;
   background-color: red;
   border: 10px solid black;
-  z-index: 1;
+  z-index: 1
 }
 
-img:hover+#vert{
-  z-index: 0;
+img:hover+#vert {
+  z-index: 0
 }

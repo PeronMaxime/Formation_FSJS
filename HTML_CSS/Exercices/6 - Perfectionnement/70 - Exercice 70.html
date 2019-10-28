@@ -10,3 +10,42 @@
 <!--
 	Créez une page contenant un formulaire avec trois input. Avec :before, ajoutez un trait de séparation entre chaque entrée. Avec :after, ajoutez des bulles d'information visibles lorsque l'élément est sélectionné.
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+
+    span::before{
+      background-color: black;
+      content: '';
+      display: block;
+      height: 1px;
+      margin-bottom: 5px;
+      margin-top: 5px;
+      width: 20%;
+    }
+
+    span:hover::after{
+      border: 1px solid black;
+      border-radius: 10px;
+      content: "Ceci est un input";
+      display: block;
+      height: 20px;
+      margin-top : 5px;
+      width: 20%;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <span><input type="text"></span>
+    <span><input type="text"></span>
+    <span><input type="text"></span>
+  </form>
+</body>
+</html>

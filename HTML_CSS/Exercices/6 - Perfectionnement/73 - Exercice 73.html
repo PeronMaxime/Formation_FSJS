@@ -34,3 +34,41 @@
   Créez une page contenant un titre principal et une balise image.
   Prévoyez une animation de l'image qui entraîne un déplacement alterné de celle-ci de la gauche vers la droite puis un retour à la position de départ et ce de façon continue.
     -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    img{
+      margin-left: 30%;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-name: animation;
+    }
+
+    @keyframes animation{
+      from{
+        margin-left: 20%;
+      }
+      to{
+        margin-left: 40%;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Titre</h1>
+  </header>
+
+  <section>
+    <img src="1.png" alt="">
+  </section>
+</body>
+</html>

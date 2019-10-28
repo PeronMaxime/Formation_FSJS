@@ -6,3 +6,44 @@
 <!--
 	Créez une page avec un menu s'affichant verticalement. Mettez une barre de séparation entre chaque entrée au moyen d'une bordure sur chaque élément. Suivant votre choix, bordure en haut ou en bas de chaque élément, supprimez la bordure du premier ou du dernier élément pour que la bordure soit présent uniquement entre chaque élément.
 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		nav{
+			width: 10%;
+		}
+		ul{
+			text-align: center;
+			list-style: none;
+		}
+		a{
+			text-decoration: none;
+			color: black;
+		}
+		li{
+			border-bottom: 2px solid black;
+		}
+		li:last-child{
+			border: none;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Titre</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="#">Menu 1</a></li>
+			<li><a href="#">Menu 2</a></li>
+			<li><a href="#">Menu 3</a></li>
+		</ul>
+	</nav>
+</body>
+</html>
