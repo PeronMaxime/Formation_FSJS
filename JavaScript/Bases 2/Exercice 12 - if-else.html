@@ -31,12 +31,31 @@
         Modifiez la valeur de la variable pour afficher chacun des deux résultats possibles.
         Utilisez if/else.
       */
-
+      var nombre = 10;
+      if(nombre>=10){
+        alert('Entrée');
+      }
+      else{
+        alert('Sortie');
+      }
+      
       /*
       ** 2 **
         Reprenez le bloc précédent et mettez le dans une fonction ayant un argument en entrée. Cette fois-ci, le test se fait sur l'argument en entrée de la fonction.
         Exécutez la fonction avec plusieurs valeurs possibles en entrée.
       */
+     var entreeSortie = function(nombre){
+       if(nombre>=10){
+         alert('Entrée');
+       }
+       else{
+         alert('Sortie');
+       }
+       
+     }
+     entreeSortie(8);
+     entreeSortie(10);
+     entreeSortie(15);
 
     </script>
   </head>

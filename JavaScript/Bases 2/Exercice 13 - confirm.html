@@ -19,7 +19,10 @@
 
         Utilisez la fonction confirm()
       */
-
+      var afficherBoiteDial = function(){
+        confirm('Ceci est un choix');
+      }
+      var autreFonction = afficherBoiteDial;
       /*
       ** 2 **
         Au clic sur le second paragraphe s'exécute une autre fonction que vous avez également déclarée dans l'en-tête du document.
@@ -28,7 +31,13 @@
 
         Utilisez la fonction confirm() puis la fonction alert().
       */
-
+      var afficherBoiteDialAvecReturn= function(){
+        return confirm('Ceci est un choix');
+      }
+      var retourConfirm = function(){
+        var res = afficherBoiteDialAvecReturn();
+        alert(res);
+      }
       /*
         Quelle information nous retourne la fonction confirm() si l'utilisateur clique sur le choix OK ? Sur Annuler ?
       */
@@ -40,13 +49,21 @@
 
         Utilisez l'attribut d'événement onload, la fonction confirm(), la fonction alert() et un bloc conditionnel if.
       */
-
+      var question = function(){
+        return confirm('Voulez-vous continuer ?');
+      }
+      var reponse = function(){
+        var res = question();
+        if(res==true){
+          alert('Vous avez cliqué sur OK');
+        }
+      }
     </script>
   </head>
-  <body>
+  <body onload="reponse()">
     <h1>JavaScript : Exercice 13 - confirm</h1>
-    <p>Premier paragraphe</p>
-    <p>Deuxième paragraphe</p>
+    <p onclick="autreFonction()">Premier paragraphe</p>
+    <p onclick="retourConfirm()">Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>
     </noscript>

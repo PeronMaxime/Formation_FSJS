@@ -35,19 +35,29 @@
         Créez une fonction avec un argument en entrée affichant un message dans une boîte de dialogue.
         Exécutez cette fonction avec une chaîne de caractères.
       */
+      var afficherMessage = function(message){
+        alert(message);
+      }
+      afficherMessage('Bonjour tralalalala je suis un escargot !');
 
       /*
       ** 2 **
         Créez une seconde fonction avec deux arguments en entrée. Les deux arguments sont concaténés et affichés dans une boîte de dialogue.
         Exécutez cette fonction avec deux chaînes de caractères.
       */
-
+      var afficherMessagerConcat = function(message1, message2){
+        alert(message1 + ' ' + message2);
+      }
+      afficherMessagerConcat('Au clair de la lune', 'mon ami Pierrot');
       /*
       ** 3 **
         Reprenez la fonction précédente. Réécrivez-la de telle façon à utiliser un seul argument en entrée tout en gardant la concaténation. Vous utiliserez donc un tableau comme argument.
         Exécutez cette fonction avec un tableau contenant deux chaînes de caractères.
       */
-
+      var afficherMessagerConcat = function(message){
+        alert(message[0] + ' ' + message[1]);
+      }
+      afficherMessagerConcat(['Au clair de la lune', 'mon ami Pierrot']);
     </script>
   </head>
   <body>

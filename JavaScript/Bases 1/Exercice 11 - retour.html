@@ -27,12 +27,21 @@
         Créez une fonction ajoutant un nombre à une chaîne de caractère.
         Affichez la valeur de retour dans une boîte de dialogue.
       */
-
+      var fonctionAjoutNombre = function(nombre){
+        return 'Ceci est une chaine, voici un nombre: '+nombre;
+      }
+      var res1 = fonctionAjoutNombre(45);
+      alert(res1);
       /*
       ** 2 **
         Reprenez la fonction du point 3 de l'exercice précédent.
         Modifiez cette fonction pour récupérer une valeur de retour et l'afficher dans une boîte de dialogue (Bien entendu, vous devez supprimer l'appel à la fonction alert() dans votre fonction).
       */
+      var afficherMessagerConcat = function(message){
+        return(message[0] + ' ' + message[1]);
+      }
+      var res2 = afficherMessagerConcat(['Au clair de la lune', 'mon ami Pierrot']);
+      alert(res2);
     </script>
   </head>
   <body>
