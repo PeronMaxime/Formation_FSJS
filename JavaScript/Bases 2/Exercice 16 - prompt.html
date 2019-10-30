@@ -19,7 +19,13 @@
 
         Utilisez l'attribut d'évènement onclick, la fonction prompt() et la fonction alert()
       */
-
+      var afficherBoiteDial = function(){
+        return prompt('Veuillez saisir un message');
+      }
+      var retourMessage = function(){
+        var res = afficherBoiteDial();
+        alert(res);
+      }
       /*
         Quelle information nous retourne la fonction prompt si :
         - l'utilisateur clique sur Annuler ?
@@ -30,7 +36,7 @@
   </head>
   <body>
     <h1>Mon nouveau document</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="retourMessage()">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

@@ -26,9 +26,21 @@
 
         Utilisez l'attribut d'évenement onload, la fonction confirm() , la fonction alert() et une boucle while.
       */
+
+      var question = function(){
+        return confirm('Voulez-vous continuer ?');
+      }
+
+      var reponse = function(){
+        var res = question();
+        while(res == true){
+          res = question();
+        }
+      }
+
     </script>
   </head>
-  <body>
+  <body onload="reponse()">
     <h1>JavaScript : Exercice 15 - boucle while</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

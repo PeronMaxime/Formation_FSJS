@@ -20,11 +20,31 @@
 
         Utilisez l'attribut d'évènement onclick, la fonction prompt(), la fonction alert() et la boucle while.
       */
+
+      var afficherBoiteDial = function(){
+        return prompt('Veuillez saisir quelque chose');
+      }
+
+      // var retourMessage = function(){
+      //   var res = afficherBoiteDial();
+      //   var resFinal ='';
+        
+      //   for(var i = 0; i<2; i++){                 // C'est de la merde ce code
+      //     while(res == null || res == ''){
+      //       res = afficherBoiteDial();
+      //     }
+      //     resFinal += res;
+      //   }
+        
+      //   alert(resFinal);
+      // }
+
+
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 21 - prompt 4</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="retourMessage()">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

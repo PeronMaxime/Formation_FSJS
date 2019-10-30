@@ -15,7 +15,6 @@
         // code à exécuter.
         compteur++;
       }
-
       /*
         Il existe en JavaScript un autre type de boucle qui permet d'utiliser un compteur. La voici :
       */
@@ -32,15 +31,26 @@
       ** 1 **
         Reprenez le code de l'exercice précédent au point 1 en utilisant une boucle for au lieu d'un while.
       */
+      var afficherBoucle = function(){
+        for(var i = 1; i < 4; i++){
+          alert(i);
+        }
+      }
 
       /*
       ** 2 **
         Reprenez le code de l'exercice précédent au point 2 en utilisant une boucle for au lieu d'un while.
       */
+      var afficherMessageBoucle = function(){
+        var tableauMessage = ['Coucou','les','loustiques'];
+        for(var i = 0; i < 3; i++){
+          alert(tableauMessage[i]);
+        }
+      }
 
     </script>
   </head>
-  <body>
+  <body onload="afficherBoucle();afficherMessageBoucle()">
     <h1>JavaScript : Exercice 20 - boucle for</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

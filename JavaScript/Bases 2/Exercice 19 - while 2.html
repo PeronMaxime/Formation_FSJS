@@ -43,7 +43,13 @@
 
         Utilisez la boucle while avec un compteur ainsi que la fonction alert().
       */
-
+      var afficherBoucle = function(){
+        var compteur=1;
+        while(compteur<4){
+          alert(compteur);
+          compteur++;
+        }
+      }
       /*
       ** 2 **
         Réalisez le programme (algorithme) suivant :
@@ -51,9 +57,17 @@
 
         Utilisez la boucle while avec un compteur ainsi que la fonction alert().
       */
+      var afficherMessageBoucle = function(){
+        var compteur = 0;
+        var tableauMessage = ['Coucou','les','loustiques'];
+        while(compteur<3){
+          alert(tableauMessage[compteur]);
+          compteur++
+        }
+      }
     </script>
   </head>
-  <body>
+  <body onload="afficherBoucle();afficherMessageBoucle()">
     <h1>JavaScript : Exercice 19 - while 2</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
