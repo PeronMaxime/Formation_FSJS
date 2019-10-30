@@ -1,0 +1,23 @@
+h1 {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding-bottom: 5px; }
+
+h1 {
+  border-bottom-color: navy;
+  color: navy; }
+
+nav ul {
+  display: flex;
+  justify-content: space-around; }
+
+nav li {
+  list-style: none;
+  text-align: center; }
+
+nav a {
+  color: red; }
+  nav a:hover {
+    color: grey; }
+
+/*# sourceMappingURL=style.css.map */

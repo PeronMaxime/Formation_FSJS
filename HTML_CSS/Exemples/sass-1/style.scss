@@ -1,0 +1,29 @@
+$couleur:orange;
+
+h1{
+    color: teal;
+
+    &:hover{
+        color: red;
+    }
+}
+
+p{
+    font-size: 19px;
+}
+
+.cible{
+    font-style: italic;
+}
+
+div{
+    padding: 10%;
+    
+    p {
+        color: $couleur;
+    }
+
+    .cible{
+        border-top: 2px solid $couleur;
+    }
+}

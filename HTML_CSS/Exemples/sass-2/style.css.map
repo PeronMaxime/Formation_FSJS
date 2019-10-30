@@ -1,0 +1,13 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"sass/style.scss",
+		"sass/variables.scss",
+		"sass/class.scss",
+		"sass/header.scss",
+		"sass/section.scss"
+	],
+	"names": [],
+	"mappings": "AGAA,ADAA,ECAE,CDAe;EACb,mBAAmB,EAAE,KAAK;EAC1B,mBAAmB,EAAE,GAAG;EACxB,cAAc,EAAE,GAAG,GACtB;;ACJD,AAAA,EAAE,CAAA;EAEE,mBAAmB,EFDP,IAAI;EEEhB,KAAK,EFFO,IAAI,GEInB;;AAED,AACI,GADD,CACC,EAAE,CAAC;EACC,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,YAAY,GAChC;;AAJL,AAMI,GAND,CAMC,EAAE,CAAC;EACC,UAAU,EAAE,IAAI;EAChB,UAAU,EAAE,MAAM,GACrB;;AATL,AAWI,GAXD,CAWC,CAAC,CAAC;EACE,KAAK,EFnBE,GAAG,GEwBb;EAjBL,AAcQ,GAdL,CAWC,CAAC,AAGI,MAAM,CAAA;IACH,KAAK,EAAE,IAAI,GACd"
+}

@@ -1,0 +1,26 @@
+h1{
+    @extend %bordure_dessous;
+    border-bottom-color: $couleur_titre;
+    color: $couleur_titre;
+
+}
+
+nav {
+    ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    li {
+        list-style: none;
+        text-align: center;
+    }
+
+    a {
+        color: $couleur_lien;
+
+        &:hover{
+            color: grey;
+        }
+    }
+}

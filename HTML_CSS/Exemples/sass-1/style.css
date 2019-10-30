@@ -1,0 +1,17 @@
+h1 {
+  color: teal; }
+  h1:hover {
+    color: red; }
+
+p {
+  font-size: 19px; }
+
+.cible {
+  font-style: italic; }
+
+div {
+  padding: 10%; }
+  div p {
+    color: orange; }
+  div .cible {
+    border-top: 2px solid orange; }
