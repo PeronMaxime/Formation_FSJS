@@ -23,6 +23,28 @@
         Utilisez une boucle for, un bloc if/else, les fonctions confirm() et alert().
       */
 
+      var tab=[2,3,4,5];
+
+      var addition = function(nombre1, nombre2, nombre3, nombre4){
+        return nombre1+nombre2+nombre3+nombre4;
+      }
+
+      var multiplication = function(nombre1, nombre2, nombre3, nombre4){
+        return nombre1*nombre2+nombre3+nombre4;
+      }
+
+      var boucleTableau = function(nombre1, nombre2, nombre3, nombre4){
+        var choix = prompt('Voulez-vous une addition ou une multiplication ?');
+        var unFonction;
+        if(choix == 'addition'){
+          uneFonction = addition;
+        }
+        else if(choix=='multiplication'){
+          uneFonction = multiplication;
+        }
+        
+      }
+
       /*
       ** 2 **
         On peut connaître le nombre d'entrée d'un tableau de la façon suivante :

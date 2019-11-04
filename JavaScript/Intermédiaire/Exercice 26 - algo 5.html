@@ -17,9 +17,27 @@
         Utilisez l'attribut d'évènement onload, la fonction prompt(), une boucle for, une boucle while et la fonction alert().
 
       */
+
+      var afficherBoiteDial = function(){
+        return prompt('Veuillez saisir du texte');
+      }
+
+      var remplirTab = function(){
+        var tab = [];
+        for(i=0; i<4; i++){
+          var res = afficherBoiteDial();
+          resTransform = parseFloat(res);
+          while(isNaN(resTransform)==false || res==''){
+            res = afficherBoiteDial();
+            resTransform = parseFloat(res);
+          }
+          tab[i] = res;
+        }
+        alert(tab);
+      }
     </script>
   </head>
-  <body>
+  <body onload="remplirTab();">
     <h1>JavaScript : Exercice 26 - algo 5</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

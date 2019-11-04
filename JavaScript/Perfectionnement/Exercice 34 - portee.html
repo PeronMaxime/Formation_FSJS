@@ -17,9 +17,27 @@
         Les deux saisies successives sont stockées dans la même variable. Affichez le contenu de cette variable dans une boîte de dialogue
         Que se passe-t-il si je fait précéder, dans la fonction, le nom de la variable par le mot-clef var ? Pourquoi ?
       */
+
+      var premiereQuestion = function(){
+        var reponse = prompt('Veuillez saisir quelque chose');
+        while(reponse == null || reponse == ''){
+          reponse = prompt('Veuillez saisir quelque chose');
+        }
+
+        var deuxiemeQuestion = function(){
+          reponse = prompt('Veuillez saisir quelque chose');
+          while(reponse == null || reponse == ''){
+            reponse = prompt('Veuillez saisir quelque chose');
+          }
+        }
+        deuxiemeQuestion();
+        alert(reponse)
+      }
+
+
     </script>
   </head>
-  <body>
+  <body onload="premiereQuestion();">
     <h1>JavaScript : Exercice 34 - portee</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

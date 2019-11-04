@@ -28,11 +28,35 @@
         « Il est 8 h, je me lève. Il est 13 h, je déjeûne. Il est 23 h, je vais dormir. »
         Utilisez une boucle while avec compteur.
       */
+
       var mots = [8, 'je me lève', 13, 'je déjeûne', 23, 'je vais dormir'];
+      var res = '';
+
+      var mot = function(){
+
+        return function(message){
+          if(!isNaN(message)){
+            res += 'Il est ' + message + ' h, ';
+          }
+          else{
+            res += message+'. ';
+          }
+        }
+      }
+
+      var phrase = function(){
+        compteur = 0;
+        while(compteur < 6){
+          var phrase = mot();
+          phrase(mots[compteur]);
+          compteur++;
+        }
+        alert(res);
+      }
 
     </script>
   </head>
-  <body>
+  <body onload="phrase();">
     <h1>Mon nouveau document</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

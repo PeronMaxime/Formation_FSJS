@@ -16,12 +16,31 @@
         _ La fonction prend en argument le message qui s'affichera à l'utilisateur lors de la saisie.
         _ La fonction retourne le nombre saisi par l'utilisateur.
       */
+
+      var saisiNombre = function(message){
+        var somme = 0;
+        for(i=0; i<2; i++){
+          var res = prompt(message);
+          res = parseFloat(res);
+          while(isNaN(res)==true){
+            res = prompt(message);
+            res = parseFloat(res);
+          }
+          somme += res;
+        }
+        return somme;
+      }
+
+      var sommeNombre = function(){
+        var somme = saisiNombre('Veuillez saisir un nombre');
+        alert(somme);
+      }
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 25 - algo 4</h1>
     <p>Premier paragraphe</p>
-    <p>Deuxième paragraphe</p>
+    <p onclick="sommeNombre();">Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>
     </noscript>

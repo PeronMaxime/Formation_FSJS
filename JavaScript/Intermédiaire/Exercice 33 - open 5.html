@@ -12,9 +12,18 @@
         Tant que l'ensemble du tableau n'a pas été parcouru, utilisez l'url contenue dans la case du tableau sur laquelle vous vous trouvez pour ouvrir une nouvelle fenêtre.
         Utilisez une boucle while... avec un compteur de tours.
       */
+      var listeUrl = ['http://www.google.fr', 'https://www.linkedin.com/', 'https://mail.google.com/', 'https://github.com/', 'https://developer.mozilla.org/fr/'];
+
+      var ouvrirLien = function (){
+        for(i=0; listeUrl[i]!=undefined; i++){
+          open(listeUrl[i]);
+        }
+        
+      }
+
     </script>
   </head>
-  <body>
+  <body onload="ouvrirLien();">
     <h1>JavaScript : Exercice 33 - open 5</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

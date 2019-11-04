@@ -13,9 +13,34 @@
 
         Il n'est pas nécessaire pour la seconde boucle for d'utiliser, par exemple, i < 4 comme limite pour la boucle. Regardez l'indication de l'Exercice 27bis pour trouver la solution.
       */
+      var afficherBoiteDial = function(){
+        return prompt('Veuillez saisir du texte');
+      }
+
+      var remplirTab = function(){
+        var tab = [];
+        for(i=0; i<4; i++){
+          var res = afficherBoiteDial();
+          resTransform = parseFloat(res);
+          while(isNaN(resTransform)==false || res==''){
+            res = afficherBoiteDial();
+            resTransform = parseFloat(res);
+          }
+          tab[i] = res;
+        }
+        return tab;
+      }
+
+      var parcourirTab = function(){
+        var res = remplirTab();
+        for(i=0; typeof(res[i])!='undefined'; i++){
+          alert(res[i]);
+        }
+      }
+
     </script>
   </head>
-  <body>
+  <body onload="parcourirTab();">
     <h1>JavaScript : Exercice 27 - algo 6</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

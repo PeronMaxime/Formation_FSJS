@@ -8,14 +8,36 @@
       ************ EXERCICE ************
       **********************************
         Réalisez le programme (algorithme) suivant :
-        Quand l'utilisateur sur le premier paragraphe, affichez une boîte de dialogue avec champ de saisie à l'utilisateur.
+        Quand l'utilisateur clique sur le premier paragraphe, affichez une boîte de dialogue avec champ de saisie à l'utilisateur.
         L'utilisateur doit impérativement saisir une chaîne de caractère. Cette chaîne de caractères est ensuite utilisée pour ouvrir une nouvelle fenêtre à l'aide de la fonction open.
       */
+
+      var afficherBoiteDial = function(){
+        return prompt('Merci de saisir l\'URL vers laquelle vous voulez vous rediriger.');
+      }
+
+      var verifSaisie = function(){
+        var res = afficherBoiteDial();
+        resParser = parseFloat(res);
+        while(isNaN(resParser)==false){
+          alert('Merci de saisir une chaine de caractère');
+          var res = afficherBoiteDial();
+          resParser = parseFloat(res);
+        }
+        return res;
+      }
+
+      var ouvrirLien = function(){
+        var lien = verifSaisie();
+        open(lien, 'test');
+      }
+
+
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 30 - open 2</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="ouvrirLien();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

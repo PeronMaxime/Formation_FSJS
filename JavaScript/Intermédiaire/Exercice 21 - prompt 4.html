@@ -25,19 +25,18 @@
         return prompt('Veuillez saisir quelque chose');
       }
 
-      // var retourMessage = function(){
-      //   var res = afficherBoiteDial();
-      //   var resFinal ='';
-        
-      //   for(var i = 0; i<2; i++){                 // C'est de la merde ce code
-      //     while(res == null || res == ''){
-      //       res = afficherBoiteDial();
-      //     }
-      //     resFinal += res;
-      //   }
-        
-      //   alert(resFinal);
-      // }
+      var message = '';
+
+
+      for(var i=0; i<2; i++){
+        var res = afficherBoiteDial();
+        while(res==null || res==''){
+          res = afficherBoiteDial();
+        }
+        message += res;
+      }
+
+      alert(message);
 
 
     </script>

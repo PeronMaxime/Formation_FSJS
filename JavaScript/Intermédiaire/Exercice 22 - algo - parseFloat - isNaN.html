@@ -28,7 +28,15 @@
 
         Utilisez l'attribut d'évènement onload(), la fonction prompt(), la fonction alert() et la fonction parseFloat().
       */
+      var afficherBoiteDial = function(){
+        return prompt('Veuillez entrer un nombre');
+      }
 
+      var transform = function(){
+        var res = afficherBoiteDial();
+        resTransform = parseFloat(res);
+        alert(isNaN(resTransform));
+      }
       /*
       ** 2 **
         Améliorez le programme (algorithme) précédent :
@@ -49,11 +57,21 @@
 
         Utilisez l'attribut d'évènement onclick, la fonction prompt(), la fonction alert(), la fonction parseFloat(), la fonction isNaN() et un bloc conditionnel if/else.
       */
+      var verifNombre = function(){
+        var res = afficherBoiteDial();
+        res = parseFloat(res);
+        if(isNaN(res)==true){
+          alert('Vous devez saisir un nombre');
+        }
+        else{
+          alert('Merci d\'avoir saisi un nombre');
+        }
+      }
     </script>
   </head>
-  <body>
+  <body onload="transform();">
     <h1>cript : Exercice 22 - algo - parseFloat - isNaN</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="verifNombre();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

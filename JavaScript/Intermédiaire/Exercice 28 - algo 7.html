@@ -14,9 +14,41 @@
 
         Utilisez l'attribut d'évènement onload, la fonction prompt(), une boucle for, des boucles while et la fonction alert().
       */
+
+      var afficherBoiteDial = function(){
+        return prompt('Veuillez saisir du texte');
+      }
+
+      var afficherChoixSaisie = function(){
+        return confirm('Voulez-vous ajouter une entrée ?');
+      }
+
+      var remplirTab = function(){
+        var tab = [];
+        var choixUtil = true;
+        var compteur = 0;
+        
+        //Tant que l'utilisateur choisi de continuer
+        while(choixUtil==true){
+          //Afficher une nouvelle saisie
+          var res = afficherBoiteDial();
+          choixUtil = afficherChoixSaisie();
+          tab[compteur] = res;
+          compteur++;
+        }
+
+        return tab;
+      }
+
+      var parcourirTab = function(){
+        var res = remplirTab();
+        for(i=0; res[i]!=undefined; i++){
+          alert(res[i]);
+        }
+      }
     </script>
   </head>
-  <body>
+  <body onload="parcourirTab();">
     <h1>JavaScript : Exercice 28 - algo 7</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

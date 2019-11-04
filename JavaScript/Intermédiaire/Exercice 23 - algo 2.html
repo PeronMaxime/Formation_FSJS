@@ -13,9 +13,24 @@
 
         Utilisez l'attribut d'évènement onload, la fonction prompt(), la fonction parseFloat(), la fonction isNaN() et une boucle while.
       */
+
+      var afficherBoiteDial = function(){
+        return prompt('Merci de saisir un nombre');
+      }
+      
+      var saisiNombre = function(){
+        var res = afficherBoiteDial();
+        res = parseFloat(res);
+
+        while(isNaN(res)==true){
+          res = afficherBoiteDial();
+          res = parseFloat(res);
+        }
+
+      }
     </script>
   </head>
-  <body>
+  <body onload="saisiNombre();">
     <h1>JavaScript : Exercice 23 - algo 2</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

@@ -13,12 +13,30 @@
 
         Utilisez l'attribut d'évènement onclick, la fonction prompt(), la fonction alert(), la fonction parseFloat(), la fonction isNaN() et des boucles while.
       */
+
+      var afficherBoiteDial = function(){
+        return prompt('Veuillez saisir un nombre');
+      }
+
+      var saisiNombre = function(){
+        var somme = 0;
+        for(i=0; i<2; i++){
+          var res = afficherBoiteDial();
+          res = parseFloat(res);
+          while(isNaN(res)==true){
+            res = afficherBoiteDial();
+            res = parseFloat(res);
+          }
+          somme += res;
+        }
+        alert(somme);
+      }
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 24 - algo 3</h1>
     <p>Premier paragraphe</p>
-    <p>Deuxième paragraphe</p>
+    <p onclick="saisiNombre();">Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>
     </noscript>

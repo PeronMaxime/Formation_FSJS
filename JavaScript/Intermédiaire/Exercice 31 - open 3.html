@@ -14,11 +14,34 @@
           - Si l'utilisateur saisit un texte, ce texte est utilisé comme URL pour ouvrir une nouvelle fenêtre.
           - Sinon un message s'affiche dans une boîte de dialogue avec le texte : « Tant pis ! ».
       */
+      var afficherDemanderGoogle = function(){
+        return confirm('Voulez-vous aller sur Google ?');
+      }
+
+      var afficherSaisieUrl = function(){
+        return prompt('Veuillez saisir une URL :')
+      }
+
+      var lienUrl = function(){
+        var resGoogle = afficherDemanderGoogle();
+        if(resGoogle==true){
+          open('http://www.google.fr', 'Google');
+        }
+        else{
+          var resUrl = afficherSaisieUrl();
+          if(!isNaN(resUrl)){
+            alert('Tant pis !');
+          }
+          else {
+            open(resUrl);
+          }
+        }
+      }
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 31 - open 3</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="lienUrl();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>
