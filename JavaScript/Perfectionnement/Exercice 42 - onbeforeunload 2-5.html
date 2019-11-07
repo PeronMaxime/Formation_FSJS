@@ -17,9 +17,14 @@
 
         Pensez à désactiver le bloqueur de PopUp de votre navigateur pour faire vos tests.
       */
+
+      var popup = function(){
+        open('C:\Users\/Maxime\/Documents\/Dev\/Formation_FSJS\/JavaScript\/Perfectionnement\/Exercice 42 - onbeforeunload 2-1.html');
+      }
+      
     </script>
   </head>
-  <body>
+  <body onbeforeunload="popup();">
     <h1>Mon nouveau document</h1>
     <p>Premier paragraphe</p>
     <p>Deuxième paragraphe</p>

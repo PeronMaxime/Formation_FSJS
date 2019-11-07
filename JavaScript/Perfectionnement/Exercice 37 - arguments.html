@@ -25,11 +25,27 @@
         Affichez dans une boite de dialogue la moyenne d'au-moins quatre nombre entiers.
       */
 
+      var moyenne = function(){
+        var i = 0;
+        var res = 0;
+        while(arguments[i]){
+          res += arguments[i];
+          i++;
+        }
+        res /= arguments.length;
+        return res;
+      }
+
+      var appelMoyenne = function(){
+        var res = moyenne(1,2,3,4,5,6,7,8,9,10);
+        alert(res);
+      }
+
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 37 - arguments</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="appelMoyenne();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

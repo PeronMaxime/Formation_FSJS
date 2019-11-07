@@ -23,11 +23,26 @@
 
         L'opérateur % (modulo) permet de calculer le reste des divisions successive du premier opérande par le second (ex: 10 % 2 donne 0, 10 % 3 donne 1)
       */
+
+      var afficherBoiteDial = function(){
+        return prompt('Saisissez une année');
+      }
+
+      var testBissextile = function(){
+        var annee = afficherBoiteDial();
+        if(((annee%4)==0 && (annee%100)!=0) || (annee%400)==0){
+          alert('L\'année est bissextile');
+        }
+        else{
+          alert('L\'année n\'est pas bissextile');
+        }
+      }
+
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 49 - bissextile</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="testBissextile();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

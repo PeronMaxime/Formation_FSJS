@@ -18,12 +18,36 @@
         _ s'il répond samedi ou dimanche, vous affichez une quatrième réponse.
       */
 
+      var demandeJour = function(){
+        return parseInt(prompt('Indiquez le nombre du jour où vous êtes né (Lundi -> 1)')); 
+      };
+
+      var reponseJour = function(){
+
+        var res = demandeJour();
+        while(isNaN(res) || res < 1 || res > 7){
+          alert('Merci d\'indiquer un nombre valide entre 1 et 7');
+          res = demandeJour();
+        }
+        if(res==1){
+          alert('Vous êtes né en début de semaine');
+        }
+        else if(res > 1 && res < 5){
+          alert('Vous êtes né en milieu de mois');
+        }
+        else if(res==5){
+          alert('Vous êtes né juste avant le week-end');
+        }
+        else{
+          alert('Vous êtes né en plein week-end, la chance !');
+        }
+      }
 
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 43 - parseInt</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="reponseJour();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

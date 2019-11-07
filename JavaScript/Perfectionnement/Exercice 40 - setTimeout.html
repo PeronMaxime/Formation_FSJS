@@ -33,24 +33,34 @@
       ** 1 **
         Affichez un message dans une boîte de dialogue au bout de 5 sec.
       */
-
+      var messageRetarde = setTimeout(function(){
+        alert('Coucou');
+      },5000);
       /*
       ** 2 **
         Que fait la fonction setInterval() ? Pour ce faire, testez la fonction en adaptant la fonction précédente.
       */
-
+      var messageRetardeInterval = setInterval(function(){
+        alert('Coucou');
+      },2000);
       /*
       ** 3 **
         Quand l'utilisateur clique sur un paragraphe, démarrez une fonction setInterval() qui déclenche l'apparition d'une boîte de dialogue au bout de 5 sec.
         Quand l'utilisateur clique sur un autre paragraphe, arrêtez l'apparition de la boîte de dialogue au bout de 5 sec.
       */
 
+      var boiteDialInterval = setInterval(function(){
+        alert('Bonjour');
+      },5000);
+
+      var arretInterval = clearInterval(boiteDialInterval);
+
     </script>
   </head>
-  <body>
+  <body onload="messageRetardeInterval();">
     <h1>JavaScript : Exercice 40 - setTimeout</h1>
-    <p>Premier paragraphe</p>
-    <p>Deuxième paragraphe</p>
+    <p onclick="boiteDialInterval();">Premier paragraphe</p>
+    <p onclick="arretInterval();">Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>
     </noscript>

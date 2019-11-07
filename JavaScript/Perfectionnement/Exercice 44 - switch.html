@@ -34,11 +34,42 @@
       **********************************
         Reprenez l'exercice précédent en remplaçant les instructions if/else par un switch.
       */
+
+      var demandeJour = function(){
+        return parseInt(prompt('Indiquez le nombre du jour où vous êtes né (Lundi -> 1)')); 
+      };
+
+      var reponseJour = function(){
+
+        var res = demandeJour();
+        while(isNaN(res) || res < 1 || res > 7){
+          alert('Merci d\'indiquer un nombre valide entre 1 et 7');
+          res = demandeJour();
+        }
+
+        switch(res){
+          case 1:
+            alert('Vous êtes né en début de semaine');
+            break;
+          case 2:
+          case 3:
+          case 4:
+            alert('Vous êtes né en milieu de mois');
+            break;
+          case 5:
+            alert('Vous êtes né juste avant le week-end');
+            break;
+          case 6:
+          case 7:
+            alert('Vous êtes né en plein week-end, la chance !');
+            break;
+        }
+      }
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 44 - switch</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="reponseJour();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

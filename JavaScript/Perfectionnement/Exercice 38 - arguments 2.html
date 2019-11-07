@@ -10,11 +10,25 @@
         Réécrivez l'exercice précédent en utilisant une boucle for (avec tableau['length']);
       */
 
+      var moyenne = function(){
+        var res = 0;
+        for(i=0; i < arguments.length; i++){
+          res += arguments[i];
+        }
+        res /= arguments.length;
+        return res;
+      }
+
+      var appelMoyenne = function(){
+        var res = moyenne(1,2,3,4,5,6,7,8,9,10);
+        alert(res);
+      }
+
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 38 - arguments 2</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="appelMoyenne();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

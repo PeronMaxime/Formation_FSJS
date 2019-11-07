@@ -1,0 +1,15 @@
+Jeu clicker
+
+-On clique sur un ordinateur pour générer des connaissances
+
+-Avec un certain nombre de connaissances, on peut débloquer une compétence (compétence sur CV)
+
+-Chaque compétence génère un certain nombre de connaissance par seconde
+
+-Aléatoirement sur la page, apparaissent des bonus sous forme de logo de compétences, qui se déplacent et rebondissent sur les bords.
+
+-En cliquant sur le bonus, ça donne un certain nombre de connaissance, en fonction du logo qui est apparu.
+
+-Un logo bonus ne peut apparaitre seulement si la compétence est déjà débloqué.
+
+-Une fois toutes les connaissances débloqués, ça génère le CV.

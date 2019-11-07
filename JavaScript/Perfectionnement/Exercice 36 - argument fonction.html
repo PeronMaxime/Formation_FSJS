@@ -23,27 +23,48 @@
         Utilisez une boucle for, un bloc if/else, les fonctions confirm() et alert().
       */
 
-      var tab=[2,3,4,5];
+      var tab = [2,3,4,5];
+      var tmpAdd = 0;
+      var tmpMult = 1;
 
-      var addition = function(nombre1, nombre2, nombre3, nombre4){
-        return nombre1+nombre2+nombre3+nombre4;
+      var addition = function(nombre){
+        tmpAdd += nombre;
+        return tmpAdd;
       }
 
-      var multiplication = function(nombre1, nombre2, nombre3, nombre4){
-        return nombre1*nombre2+nombre3+nombre4;
+      var multiplication = function(nombre){
+        tmpMult *= nombre;
+        return tmpMult;
       }
 
-      var boucleTableau = function(nombre1, nombre2, nombre3, nombre4){
-        var choix = prompt('Voulez-vous une addition ou une multiplication ?');
-        var unFonction;
-        if(choix == 'addition'){
-          uneFonction = addition;
+      var choix = function(uneFonction, tab){
+        var res = 0;
+        for(i=0; i < tab['length']; i++){
+          res = uneFonction(tab[i]);
         }
-        else if(choix=='multiplication'){
-          uneFonction = multiplication;
-        }
+
+        alert(res);
+        
         
       }
+
+      var choixUtil = function(){
+        tmpAdd = 0;
+        tmpMult = 1;
+        var res = prompt('Voulez vous faire une addition ou une multiplication ?');
+        if(res == 'addition'){
+          choix(addition, tab);
+        }
+        else if(res =='multiplication'){
+          choix(multiplication, tab);
+        }
+        else{
+          alert('Vous avez fait une mauvaise saisie');
+          choixUtil();
+        }
+      }
+
+      
 
       /*
       ** 2 **
@@ -57,7 +78,7 @@
   </head>
   <body>
     <h1>JavaScript : Exercice 36 - argument fonction</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="choixUtil();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

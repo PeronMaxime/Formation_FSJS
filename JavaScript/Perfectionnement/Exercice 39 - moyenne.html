@@ -12,11 +12,35 @@
         b) Si l'utilisateur a saisi au-moins un nombre, faites la moyenne du/des nombre(s) saisi(s) en utilisant un boucle for.
       */
 
+      var moyenne = function(tab){
+        var res = 0;
+        for(i=0; i < tab.length; i++){
+          tab[i] = parseFloat(tab[i]);
+          res += tab[i];
+        }
+        res /= tab.length;
+        return res;
+      }
+
+      var appelMoyenne = function(){
+        var tab = [];
+        var res = prompt('Entrez un nombre');
+        
+        while(isNaN(res)==false && res != null && res != ''){
+          tab[tab.length] = res;
+          res = prompt('Entrez un nombre');
+        }
+
+        var resMoyenne = moyenne(tab);
+        alert(resMoyenne);
+
+      }
+
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 39 - moyenne</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="appelMoyenne();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

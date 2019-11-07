@@ -13,11 +13,16 @@
 
         Exemple : pour 101, les digits sont 1, 0, 1, il y a donc 3 digits.
       */
+
+      var compteDigit = function(nombre){
+        var digit = nombre.toString().length;
+        alert(digit);
+      }
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 47 - digits</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="compteDigit(155)">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>

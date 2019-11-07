@@ -20,11 +20,33 @@
 
         Indice : il faut utiliser 2 boucles imbriquées
       */
+
+      var tmp = 0;
+      var tab = [12, 2, 98, 34];
+
+      var triCroissant = function(tab){
+        for(i=0; i<tab.length ;i++){
+          for(j=0; j<tab.length ;j++){
+            if(tab[j]>tab[j+1]){
+              tmp = tab[j+1];
+              tab[j+1] = tab[j];
+              tab[j] = tmp;
+            }
+          }
+        }
+      }
+
+      var afficherTab = function(){
+        triCroissant(tab);
+        alert(tab);
+      }
+
+
     </script>
   </head>
   <body>
     <h1>JavaScript : Exercice 48 - sort</h1>
-    <p>Premier paragraphe</p>
+    <p onclick="afficherTab();">Premier paragraphe</p>
     <p>Deuxième paragraphe</p>
     <noscript>
       <p>Veuillez activer JavaScript</p>
