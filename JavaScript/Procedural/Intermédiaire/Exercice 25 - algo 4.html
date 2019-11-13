@@ -20,11 +20,9 @@
       var saisiNombre = function(message){
         var somme = 0;
         for(i=0; i<2; i++){
-          var res = prompt(message);
-          res = parseFloat(res);
+          var res = parseFloat(prompt(message));
           while(isNaN(res)==true){
-            res = prompt(message);
-            res = parseFloat(res);
+            res = parseFloat(prompt(message));
           }
           somme += res;
         }

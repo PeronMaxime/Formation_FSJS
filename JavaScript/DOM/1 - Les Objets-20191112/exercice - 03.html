@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript & DOM : Les Objets - Exercice 3</title>
+    <script>
+      //Énoncé :
+      /*
+      1. Dans les exercices de JavaScript "procédural" vous avez créé plusieurs fonctions. Vous devez regrouper toutes ces fonctions (au moins 5 d’entre-elles) dans un objet en JSON. Déclarez un objet dans lequel chaque propriété contiendra une fonction parmi celles créées précédemment.
+      */
+
+      var objetBordel = {
+
+        afficherBoiteDial: function(){
+          return prompt('Veuillez saisir quelque chose');
+        },
+
+        saisiNombre: function(){
+          var res = this.afficherBoiteDial();
+          res = parseFloat(res);
+
+          while(isNaN(res)==true){
+            res = this.afficherBoiteDial();
+            res = parseFloat(res);
+          }
+        },
+
+        openGoogle: function(){
+          open('http://www.google.fr', 'Google', 'directories=no,menubar=no');
+        },
+
+        moyenne: function(){
+          var i = 0;
+          var res = 0;
+          while(arguments[i]){
+            res += arguments[i];
+            i++;
+          }
+          res /= arguments.length;
+          alert(res);
+        },
+
+        messageRetarde: function(){
+          setTimeout(function(){alert('Coucou')},2000);
+        }
+      };
+
+      /*
+      2. Exécutez chacune des méthodes créés dans cet objet pour les tester.
+      */
+
+      // objetBordel.afficherBoiteDial();
+      // objetBordel.saisiNombre();
+      // objetBordel.openGoogle();
+      // objetBordel.moyenne(5,8,9,6,3,4,7,5,6,8);
+      // objetBordel.messageRetarde();
+
+      /*
+      3. Déclarez 1 objet JSON qui contient :
+
+      -> 1 propriété qui contient une méthode (fonction dans une propriété) :
+        - qui prend en argument 1 nombre.
+        - qui affiche ce nombre dans une une boîte de dialogue.
+        - qui RETOURNE ce nombre multiplié par 100.
+      -> Exécutez cette méthode et AFFICHEZ la VALEUR DE RETOUR dans une boîte de dialogue.
+
+      -> 1 propriété qui contient une méthode :
+        - qui prend en argument 1 texte.
+        - qui affiche ce texte dans une boîte de dialogue.
+        - qui RETOURNE ce texte concaténé avec la chaîne de caractère 'hello !'.
+      -> Exécutez cette méthode et AFFICHEZ la VALEUR DE RETOUR dans une boîte de dialogue.
+
+      -> 1 propriété qui contient une méthode :
+        - qui prend en argument un tableau de 3 index.
+        - qui affiche le contenu à l'index 1
+        - qui remplace ce que contient l'index 1 par ce qui est contenu dans l'index 2.
+        - qui RETOURNE ce tableau de 3 index modifié.
+      -> Exécutez cette méthode et AFFICHEZ la valeur du 2ème index de la VALEUR DE RETOUR dans une boîte de dialogue.
+
+      -> 1 propriété qui contient une méthode :
+        - qui prend en argument un objet de 5 propriétés qui contiennent chacune un nombre.
+        - qui met dans la 4ème propriété la somme de chacun des nombre de chacune des propriétés.
+        - qui RETOURNE 1 objet de 5 propriétés.
+      -> Exécutez cette méthode et AFFICHEZ la valeur de la 4ème propriété de la VALEUR DE RETOUR dans une boîte de dialogue.
+      */
+
+      var exo3 = {
+        foisCent: function(nombre){
+          alert(nombre);
+          nombre *= 100;
+          return nombre;
+        },
+        disBonjour: function(texte){
+          alert(texte);
+          texte = 'Hello ! '+ texte;
+          return texte;
+        },
+        modifieTableau: function(tab){
+          alert(tab[1]);
+          tab[1] = tab[2];
+          return tab;
+        },
+        sommeObjet: function(obj){
+          obj.quatre = obj.un+obj.deux+obj.trois+obj.cinq;
+          return obj;
+        }
+      };
+
+      alert(exo3.foisCent(5));
+      alert(exo3.disBonjour('monsieur l\'ornythorinque'));
+      alert(exo3.modifieTableau([8,5,2]));
+      var res = exo3.sommeObjet({un: 25, deux: 36, trois: 12, quatre: 7, cinq: 96});
+      alert(res.quatre);
+
+    </script>
+  </head>
+  <body>
+    <h1>Titre principal</h1>
+    <ul>
+      <li>Premier point</li>
+      <li>Deuxième point</li>
+      <li>Troisième point</li>
+    </ul>
+    <div>
+      <h2><span>1</span>. Titre de la première section</h2>
+      <p><span>1.1</span>. Premier paragraphe de la première section.</p>
+      <p><span>1.2</span>. Deuxième paragraphe de la deuxième section.</p>
+    </div>
+    <div>
+      <h2><span>2</span>. Titre de la deuxième section</h2>
+      <p><span>2.1</span>. Premier paragraphe de la deuxième section.</p>
+      <p><span>2.2</span>. Deuxième paragraphe de la deuxième section.</p>
+    </div>
+    <div>
+      <h2><span>3</span>. Titre de la troisième section</h2>
+      <p><span>3.1</span>. Premier paragraphe de la troisième section.</p>
+      <p><span>3.2</span>. Deuxième paragraphe de la troisième section.</p>
+    </div>
+  </body>
+</html>

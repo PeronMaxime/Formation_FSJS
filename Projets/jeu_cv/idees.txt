@@ -12,4 +12,6 @@ Jeu clicker
 
 -Un logo bonus ne peut apparaitre seulement si la compétence est déjà débloqué.
 
+-Les logos s'entrechoc et deviennent plus petit à chaque choc. Au bout de 3, ils disparaissent.
+
 -Une fois toutes les connaissances débloqués, ça génère le CV.

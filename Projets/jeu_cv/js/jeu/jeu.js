@@ -89,12 +89,11 @@ var compteur = setInterval(function(){
     }
 }, 1000);
 
-var bonus = setInterval(function(){
-    if(htmlCss>0){
-        idLogoHtml.style.display = 'inline';
-    }
-        
-},30000);
+var bonus = setInterval(function() {
+  if (htmlCss > 0) {
+    idLogoHtml.style.display = "inline";
+  }
+}, 30000);
 
 
 var deplacementLogo = setInterval(function(){
