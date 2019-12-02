@@ -12,7 +12,26 @@
       /*
       1. Donnez une propriété de style (display:none) à la <div> qui contient toutes les autres dans le document Web. A l'affichage du document, seul le titre <h1> est donc affiché.
       */
-      
+      window.onload = function(){
+        var swap = 1;
+
+        var changeDiv = function(valeur = 'none'){
+          var div = document.getElementsByTagName('div');
+          document.body.children[2].style.display = valeur;
+        };
+        changeDiv();
+        
+        document.body.children[0].onclick = function(){
+          if(swap==1){
+            changeDiv("block");
+            swap*=-1;
+          }else if(swap ==-1){
+            changeDiv();
+            swap*=-1;
+          }
+        }
+
+      };
       /*
       2. Écrivez le programme suivant : AU CLIC sur la balise <h1>, la <div> principale doit s'afficher. Si on CLIC à nouveau sur le titre, la <div> principale doit se masquer. L'algorithme est le suivant : SI la <div> est masquée, je l'affiche, SINON je la masque.
       */

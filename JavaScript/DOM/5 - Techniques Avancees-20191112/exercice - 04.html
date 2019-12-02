@@ -22,16 +22,37 @@
         La documentation de la balise script sur le MDN est accessible ici : https://developer.mozilla.org/fr/docs/Web/HTML/Element/script
       */
 
-      /*
-      * Vous avez chargé votre script de façon asynchrone à la demande.
-      */
+     /*
+     * Vous avez chargé votre script de façon asynchrone à la demande.
+     */
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = "exercice4.js";
+    document.body.appendChild(script);
+    script.addEventListener('load', function(){
+      fantome.cri();
+    });
+    /*
+    3. Un peu de factorisation. Créez une fonction qui prend en argument le nom d'un fichier (sans le .js) ET une fonction. 
+    - La fonction à créer charge le fichier et exécute la fonction fournie.
+    - La fonction fournie est appelée dans le jargon des développeur un callback (littéralement, une fonction qui sera appelée plus tard).
+    - La fonction à créer est généralement appelée "require" ou "define".
+    */
+      addEventListener('load', function(){
+        
+        var fonctionFactorise = function(nomFichier, uneFonction){
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = nomFichier+".js";
+          document.body.appendChild(script);
+          script.addEventListener('load', uneFonction);
+        };
 
-      /*
-        3. Un peu de factorisation. Créez une fonction qui prend en argument le nom d'un fichier (sans le .js) ET une fonction. 
-        - La fonction à créer charge le fichier et exécute la fonction fournie.
-        - La fonction fournie est appelée dans le jargon des développeur un callback (littéralement, une fonction qui sera appelée plus tard).
-        - La fonction à créer est généralement appelée "require" ou "define".
-      */
+        document.body.children[0].onclick = function(){
+          fonctionFactorise('exercice4', function(){fantome.cri()});
+        }
+
+      });
 
       /*
       * Vous venez de créer une fonction pour AMD ! Vous pouvez utilisez la librairie http://requirejs.org/ pour bénéficier d'un boîte à outil pour les AMD qui prend en compte un la compatibilité inter navigateurs, un ensemble d'optimisation et de bonnes pratiques pour la gestion des AMD.

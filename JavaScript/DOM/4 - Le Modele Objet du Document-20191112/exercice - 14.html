@@ -12,6 +12,15 @@
       /*
         1. Faîtes la même chose que pour l'exercice précédent mais en faisant varier la position top du titre. Pensez également à passer le positionnement du titre en absolute.
       */
+      
+      var val = 0;
+      
+      window.onload = setInterval(function(){
+        document.body.children[0].style.position = "absolute";
+        val+=2;
+        document.body.children[0].style.marginTop = val+'px';
+        
+      },200);
     </script>
   </head>
   <body>

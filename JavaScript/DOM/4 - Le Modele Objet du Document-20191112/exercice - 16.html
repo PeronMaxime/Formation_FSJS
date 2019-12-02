@@ -16,7 +16,21 @@
       */
 
       window.onload = function(){
+        var contenu = document.getElementById('contenu');
+        contenu.src = "sprite_stickman.png";
+        contenu.style.position = "absolute";
+   
+        var container = document.getElementById('container');
+        container.style.width = "32px";
+        container.style.height = "32px";
+        container.style.overflow = "hidden";
+        container.style.position = "absolute";
         
+        var containerX = container.offsetLeft;
+        var containerY = container.offsetTop;
+        var contenuX = contenu.offsetLeft;
+        var contenuY = contenu.offsetTop;
+
         window.onkeydown = function(event){
 
           var code = event.keyCode;
@@ -24,23 +38,74 @@
           switch(code){
             case 37:
               //*instructions*
-              alert('gauche');
+              // alert('gauche');
+              containerX -= 2;
+              container.style.left = containerX+'px';
+              contenuX -= 32;
+              contenu.style.left = contenuX+'px';
+              contenu.style.top = contenuY+'px';
+              if(contenuX<=-320+32){
+                contenuX = 32;
+              }
               
             break;
             case 38:
               //instructions
-              alert('haut');
+              // alert('haut');
+              containerY -= 2;
+              container.style.top = containerY+'px';
+              contenuX -= 32;
+              contenu.style.left = contenuX+'px';
+              contenu.style.top = contenuY+'px';
+              if(contenuX<=-320+32){
+                contenuX = 0;
+              }
               
             break;
             case 39:
               //instructions
-              alert('droite');
+              // alert('droite');
+              containerX += 2;
+              container.style.left = containerX+'px';
+              contenuX -= 32;
+              contenu.style.left = contenuX+'px';
+              contenu.style.top = contenuY+'px';
+              if(contenuX<=-320+32){
+                contenuX = 32;
+              }
               
             break;
             case 40:
               //instructions
-              alert('bas');
+              // alert('bas');
+              containerY += 2;
+              container.style.top = containerY+'px';
+              contenuX -= 32;
+              contenu.style.left = contenuX+'px';
+              contenu.style.top = contenuY+'px';
+              if(contenuX<=-320+32){
+                contenuX = 0;
+              }
               
+            break;
+            case 13:
+              // Entrée
+              contenuX = 0;
+              contenu.style.left = contenuX+'px';
+              contenuY -= 32;
+              contenu.style.top = contenuY+'px';
+              var id = setInterval(function(){
+                  contenuX -= 32;
+                  contenu.style.left = contenuX+'px';
+                },200);
+                setTimeout(function(){
+                  clearInterval(id);
+                  contenuX = 0;
+                  contenuY = 0;
+                  contenu.style.left = contenuX+'px';
+                  contenu.style.top = contenuY+'px';
+                },1800);
+                
             break;
           };
 

@@ -12,6 +12,14 @@
       /*
         1. Faîtes la même chose que pour l'exercice précédent mais en faisant varier l'opacité du titre.
       */
+
+      var val = 1;
+      
+      window.onload = setInterval(function(){
+        val-=.05;
+        document.body.children[0].style.opacity = val;
+        
+      },200);
     </script>
   </head>
   <body>

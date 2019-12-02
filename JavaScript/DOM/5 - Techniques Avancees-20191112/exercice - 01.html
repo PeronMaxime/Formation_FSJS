@@ -13,7 +13,20 @@
       /*
       1. Créez un objet en JSON qui contient 3 méthodes.
       */
-
+      var monObjet = {
+        methode1: function(){
+          alert('Je suis la méthode 1');
+          return this;
+        },
+        methode2: function(){
+          alert('Je suis la méthode 2');
+          return this;
+        },
+        methode3: function(){
+          alert('Je suis la méthode 3');
+          return this;
+        }
+      }
       /*
       2. Comment obtient-on, dans une méthode, une référence à l'objet contenant la méthode ? Retournez cette référence à partir de chacune des méthodes. 
       */
@@ -21,15 +34,17 @@
       /*
       3. Exécutez les 3 méthodes sur UNE SEULE ligne.
       */
-
+      monObjet.methode1().methode2().methode3();
       /*
       4. Créez une fonction usine qui retourne l'objet.
       */
-
+      var $ = function(){
+        return Object.create(monObjet);
+      }
       /*
       5. Exécutez la fonction usine et les 3 méthodes sur UNE SEULE ligne.
       */
-
+      $().methode1().methode2().methode3();
       /*
       6. Renommez votre fonction usine avec le caractère $ et exécutez la fonction usine et les 3 méthodes sur une seule ligne.
       */

@@ -16,6 +16,16 @@
       /*
         1. AU CLIC sur le titre principal, utilisez la méthode .createElement() pour créer un objet correspondant à une balise image. Renseignez les propriétés title, alt et src de cet objet. Utilisez appendChild pour ajouter cette balise image dans le <span> 2.2
       */
+      window.onload = function(){
+        document.body.children[0].onclick = function(){
+          var img = document.createElement('img');
+          img.title = "uneImage";
+          img.alt = "uneImage";
+          img.src = "sprite_stickman.png";
+          document.body.children[2].children[1].children[2].children[0].appendChild(img);
+        };        
+      }
+
     </script>
   </head>
   <body>

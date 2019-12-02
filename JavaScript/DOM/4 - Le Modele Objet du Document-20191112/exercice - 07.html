@@ -14,9 +14,25 @@
       /*
         1. Créez une classe CSS qui spécifie plusieurs propriétés de style pour une <div> correspondant à une section. Ecrivez l'algorithme suivant : AU SURVOL sur une <div>, lui attribuer la classe CSS créée. QUANT ON NE SURVOLE PLUS la <div>, lui retirer la classe CSS créée.
       */
+      
+      var tada = function(){
+        document.body.children[2].onmouseover = function(){
+          document.body.children[2].className = "uneDiv";
+        }
+        document.body.children[2].onmouseout = function(){
+          document.body.children[2].className = "";
+        }
+      }
+
     </script>
+    <style>
+      .uneDiv{
+        border: 2px solid black;
+        color: red;
+      }
+    </style>
   </head>
-  <body>
+  <body onload="tada();">
     <h1>Titre principal</h1>
     <ul>
       <li>Premier point</li>

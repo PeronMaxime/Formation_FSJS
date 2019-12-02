@@ -12,6 +12,13 @@
       /*
         1. Écrivez le programme suivant : Au CHARGEMENT du document, toutes les 200ms, ajoutez 2px à la propriété de style de marge à gauche du titre principal. Cela signifie que toutes les 200ms, la marge à gauche du titre principal va augmenter de 2px. Vous utiliserez la méthode .setInterval().
       */
+      var val = 0;
+      
+      window.onload = setInterval(function(){
+        val+=2;
+        document.body.children[0].style.marginLeft = val+'px';
+        
+      },200);
     </script>
   </head>
   <body>

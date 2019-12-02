@@ -14,20 +14,46 @@
       /*
         1. Écrivez le programme suivant : AU CLIC sur le premier <li> changez la couleur, le poids et la taille de la police du premier <span> du titre de la première section. AU CLIC sur le deuxième <li> changez la couleur, le poids et la taille de la police du premier <span> du titre de la deuxième section. AU CLIC sur le troisième <li> changez la couleur, le poids et la taille de la police du premier <span> du titre de la troisième section.
       */
-      
+      var tada = function(){
+        var tab = document.getElementsByTagName('li');
+        var conteneur = document.getElementById('conteneur');
+        for(var i=0; i<tab.length; i++){
+          tab[i].onclick = (function(){
+            var j = i;
+
+            return function(){
+              conteneur.children[j].children[0].children[0].style.color = "blue";
+            }
+          })();
+        }
+      }
       /*
         2. Écrivez le programme suivant : AU SURVOL du titre principal, effacez le propriétés de style des 3 <span> des 3 titres de section.
       */
+
+      var effaceStyle = function(){
+        var titre = document.getElementsByTagName('h1');
+        var tab = document.getElementsByTagName('li');
+        titre[0].onmouseover = function(){
+          for(var i=0; i<tab.length; i++){
+            conteneur.children[i].children[0].children[0].style.color = "";
+          }
+        }
+
+
+
+      }
+
     </script>
   </head>
-  <body>
+  <body onload="tada(); effaceStyle();">
     <h1>Titre principal</h1>
     <ul>
       <li>Premier point</li>
       <li>Deuxième point</li>
       <li>Troisième point</li>
     </ul>
-    <div>
+    <div id="conteneur">
       <div>
         <h2><span>1</span>. Titre de la première section</h2>
         <p><span>1.1</span>. Premier paragraphe de la première section et un <a href="#">lien</a>.</p>

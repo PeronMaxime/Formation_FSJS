@@ -15,7 +15,27 @@
       /*
         1. Créez une <div> qui aura pour identifiant ascenseur. Doter cette <div> de styles CSS de telle sorte qu'elle soit visible par l'utilisateur (carré rouge par exemple). Cette <div> doit être positionnée en absolute.
       */
- 
+
+      window.addEventListener('load', function(){
+
+        // var scroll = DOMMouseScroll || mousewheel;
+
+        var uneDiv = document.createElement('div');
+        document.body.appendChild(uneDiv);
+        uneDiv.id = "ascenseur";
+        uneDiv.style.width = "50px";
+        uneDiv.style.height = "50px";
+        uneDiv.style.backgroundColor = "red";
+        uneDiv.style.position = "absolute";
+        var y = uneDiv.offsetTop;
+
+        window.addEventListener("DOMMouseScroll", function(e){
+          y += e.detail;
+          uneDiv.style.top = y+"px";
+        });
+
+      });
+      
       /*
         Lorsqu'on confie une fonction au gestionnaire d'évènement du navigateur Internet, celui-ci l'exécute toujours en lui transmettant en paramètre un objet contenant les caractéristiques de l'évènement survenu. C'est pourquoi on peut écrire :
       */
@@ -32,8 +52,9 @@
         2. Au Chargement du document, attachez une fonction à l'évènement DOMMouseScroll en utilisant la méthode .addEventListener(). Cette fonction doit déclencher l'affichage d'une boite de dialogue avec le texte : 'This is a magic scroll'.
       */
 
+
       /*
-        3. Modifiez cette fonctans uion pour afficher dne boite de dialogue la propriété .detail contenue dans l'objet d'évènement fourni à chaque fois qu'on scroll. Cette propriété contient le décalage de la molette.
+        3. Modifiez cette fonction pour afficher dans une boite de dialogue la propriété .detail contenue dans l'objet d'évènement fourni à chaque fois qu'on scroll. Cette propriété contient le décalage de la molette.
       */
 
       /*

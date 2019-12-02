@@ -12,10 +12,22 @@
       /*
         1. Créez un tableau contenant 10 mots qui forment une phrase. Utilisez la méthode .join() des tableaux pour afficher l'ensemble des éléments du tableau sous la forme d'une chaîne de caractères. 
       */
-      
+      var tab = ['il','était','une','fois','des','langoustes','qui','voulait','manger','des','bananes'];
+      // var phrase = tab.join(' ');
+      // alert(phrase);
       /*
         2. Utilisez la méthode .push() pour ajouter 3 mots à la fin du tableau et la méthode .shift() pour retirer les 3 premiers mots du tableau. Sauvegarder au fur et à mesure les 3 premiers mots extrait dans un autre tableau à l'aide la méthode .push().
       */
+      tab.push('et','des','poires');
+      var tabSup = [];
+      tabSup[0] = tab.shift();
+      tabSup[1] = tab.shift();
+      tabSup[2] = tab.shift();
+     
+      var phrase = tab.join(' ');
+      alert(phrase);
+      alert(tabSup);
+
     </script>
   </head>
   <body>

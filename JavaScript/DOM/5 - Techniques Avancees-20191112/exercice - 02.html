@@ -17,7 +17,18 @@
       /*
         1. Implémentez le préchargement d'un image de très grande taille (+ de 10 Mo). Pensez à désactiver le cache ou le vider entre chaque essai pour que l'exercice soit pertinent
       */
-    </script>
+     window.addEventListener('load', function(){
+
+       var grosseImage = document.createElement('img');
+       grosseImage.src = "grosseImage.jpg";
+
+       grosseImage.addEventListener('load', function(){
+         document.body.appendChild(grosseImage);
+       });
+
+     });
+
+  </script>
   </head>
   <body>
     <h1>Titre principal</h1> 

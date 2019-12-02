@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>jQuery : Exercice 01</title>
+		<script src="../../jquery.js"></script>
+		<script>
+			/*********************************
+			***********PRESENTATION***********
+			**********************************
+			Nous avons vu que $() nous donne un objet de nature jQuery contenant, notamment, l'ensemble des méthodes de cet objet.
+			jQuery permet de cibler un élément en particulier, par exemple $('body').
+
+			La méthode html() permet de récupérer le contenu de la balise visée. Par exemple, $('body').html(), renvoi tout le contenu de la balise body.
+			*/
+
+			/*********************************
+			*************EXERCICE*************
+			**********************************
+			** 1 **
+				Ciblez la balise h1. Affichez l'objet renvoyé par ce ciblage dans la console.
+			*/
+			window.onload = function(){
+
+				console.log($('h1'));
+				/*
+				** 2 **
+				À l'aide de la méthode html(), affichez dans une boite de dialogue le contenu de la balise h1.
+				*/
+				console.log($('h1').html());
+				/*
+				** 3 **
+				Faites la même chose pour les paragraphes ? Quel résultat obtenez-vous, pourquoi ?
+				*/
+				console.log($('p'));
+				console.log($('p').html());
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Mon nouveau document</h1>
+		<p>Premier paragraphe</p>
+		<p>Deuxième paragraphe</p>
+		<noscript>
+			<p>Veuillez activer JavaScript</p>
+		</noscript>
+		<script>
+
+		</script>
+	</body>
+</html>

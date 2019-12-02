@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>CV Clicker</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a onclick="revenir_jeu();">Revenir au jeu</a></li>
+            <li><a onclick="rechargerPage();">Recommencer</a></li>
+            <li><a onclick="afficherCv();">Afficher CV</a></li>
+            <li><a onclick="afficherContact();">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="section_jeu">
+        <div id="section_gauche">
+            <p>Nombre de connaissances : <span id="connaissances">0</span></p>
+            <p>CPS : <span id="cps">0</span></p>
+            <img src="img/ordi.jpg" alt="" id="ordi">
+        </div>
+        <div id="section_droite">
+            <p id="html_css">HTML/CSS : <span id="nombre_html_css"></span><span id="acheter_html_css" class="acheter">ACHETER</span></p>
+            <br>
+            <p id="javascript">JavaScript : <span id="nombre_javascript"></span><span id="acheter_javascript" class="acheter">ACHETER</span></p>
+        </div>
+
+        <img src="img/html5.png" alt="" class="logo" id="logo_html">
+    </section>
+
+    <section id="section_contact">
+        <p>Péron Maxime</p>
+        <p>Adresse email : maximeperon08@gmail.com</p>
+        <p>linkedin : <a onclick="linkedin();">linkedin.maximeperon.fr</a></p>
+    </section>
+
+    <footer>
+
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="js/jeu/jeu.js"></script>
+</body>
+</html>

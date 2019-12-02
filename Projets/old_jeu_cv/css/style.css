@@ -1,0 +1,87 @@
+@font-face {
+    font-family: ActionMan;
+    src: url("../fonts/Action_Man-webfont.woff");
+}
+
+body {
+    font-family: ActionMan;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    flex-basis: 33%;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+
+/************************************************************
+*****************************Jeu*****************************  
+************************************************************/
+
+#section_jeu {
+    border: 1px solid black;
+    display: flex;
+    height: 500px;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+}
+
+#ordi {
+    /* border: 1px solid black; */
+    height: 70%;
+    left: 2%;
+    position: absolute;
+    top: 15%;
+    width: 30%;
+}
+
+.acheter {
+    border: 1px solid black;
+    margin-left: 5px;
+}
+
+.logo {
+    height: 100px;
+    position: fixed;
+    width: 200px;
+    left: 0px;
+}
+
+#logo_html {
+    display: none;
+}
+
+/************************************************************
+*****************************Contact*****************************  
+************************************************************/
+
+#section_contact {
+    border: 1px solid black;
+    display: none;
+    height: 500px;
+    position: relative;
+    width: 100%;
+}
+
+#section_contact p {
+    display: block;
+}

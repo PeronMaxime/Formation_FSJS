@@ -14,6 +14,16 @@
 
         Note : Pour ajouter 2px à 2px, vous devez d'abord transformer 2px en nombre, additionner le nombre obtenu et re-concaténer ce nombre avec le texte 'px'.
       */
+
+      window.onload = function(){
+        var val = 0;
+
+        document.body.children[0].onclick = function(){
+          val+=2;
+          document.body.children[0].style.marginLeft = val+'px';
+        }
+
+      };
     </script>
   </head>
   <body>
