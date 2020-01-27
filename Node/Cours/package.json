@@ -1,0 +1,22 @@
+{
+  "name": "cours",
+  "version": "1.0.0",
+  "main": "20200116_03_cours_les_modules.js",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "mongod": "^2.0.0",
+    "mongodb": "^3.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lister": "ls",
+    "start": "node 20200116_03_cours_les_modules.js"
+  },
+  "author": "",
+  "license": "SEE LICENSE IN LICENSE.TXT",
+  "description": ""
+}

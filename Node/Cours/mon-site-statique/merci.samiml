@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Merci</title>
+  </head>
+  <body>
+    <h1>Merci $_GET[FIRSTNAME] $_GET[LASTNAME] de votre aide ! Vous êtes $_POST[STATUS].</h1>
+  </body>
+</html>

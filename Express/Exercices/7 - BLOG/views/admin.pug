@@ -1,0 +1,12 @@
+include ./includes/head.pug
+body
+  h1 Connexion à la page d'administration
+  include ./includes/nav.pug
+  form(action="/admin" method="POST")
+    label(for="pseudo") Pseudo :
+    input(type="text" name="pseudo")
+    label(for="mdp") Mot de passe : 
+    input(type="text" name="mdp")
+    input(type="submit" value="Se connecter")
+  if(err)
+    p= err

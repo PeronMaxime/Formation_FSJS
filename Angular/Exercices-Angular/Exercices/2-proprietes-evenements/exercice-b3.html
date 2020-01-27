@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les liaisons - Exercice B3 - la liaison d'événements (_event binding_)</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-liaisons---exercice-b3---la-liaison-d%c3%a9v%c3%a9nements-event-binding">Angular : les liaisons - Exercice B3 - la liaison d'événements (<em>event binding</em>)</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-b3&quot; dans le dossier <code>src/app/exercices/2-proprietes-evenements/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#event-binding-event">La liaison d'événement</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/user-input">Les événements utilisateur</a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Ajoutez le contenu suivant dans le template.</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Quelle est la rubrique active ?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Rubrique 1<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Titre de la rubrique 1<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien nulla, laoreet consectetur urna et, elementum suscipit magna. Aliquam erat volutpat. Quisque felis purus, tempus at accumsan quis, molestie in elit.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Rubrique 2<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Titre de la rubrique 2<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Aliquam erat volutpat. Quisque felis purus, tempus at accumsan quis, molestie in elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sapien nulla, laoreet consectetur urna et, elementum suscipit magna.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">h4</span>&gt;</span>Rubrique 3<span class="hljs-tag">&lt;/<span class="hljs-name">h4</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h5</span>&gt;</span>Titre de la rubrique 3<span class="hljs-tag">&lt;/<span class="hljs-name">h5</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Sed ligula libero, tristique id vestibulum vel, imperdiet ac est. Nulla venenatis posuere neque eget venenatis. Nulla congue est neque, nec dapibus tellus gravida ac. Donec ligula massa, molestie at placerat eu, hendrerit sed eros. In elementum ipsum sit amet consequat fringilla.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<h2 id="partie-2">Partie 2</h2>
+<p>Le document comporte à présent 3 rubriques. Lorsqu'une des rubriques est chargée et affichée dans le DOM, les autres doivent être retirées du DOM.</p>
+<p>Pour atteindre cet objectif, nous allons utiliser la directive <code>NgIf</code> et la liaison d'événement.</p>
+<p>Dans la classe du composant, créez 1 propriété et 2 méthodes :</p>
+<ul>
+<li>La propriété contient le numéro de la rubrique active,</li>
+<li>La première méthode prend en argument un numéro de rubrique et l'affecte à la propriété contenant le numéro de rubrique active,</li>
+<li>La seconde méthode prend en argument un numéro de rubrique active et retourne <code>true</code> si la propriété qui contient le numéro de rubrique active est le même que celui fourni en argument sinon <code>false</code>.</li>
+</ul>
+<p>Pour tester vos méthodes, vous pouvez utiliser des expressions.</p>
+<h2 id="partie-3">Partie 3</h2>
+<p>Utilisez l'événement <code>(click)</code> sur chaque titre <code>&lt;h4&gt;</code> pour exécuter la méthode qui permet d'affecter le numéro de rubrique active correspondant au titre sur lequel on a cliqué.</p>
+<h2 id="partie-4">Partie 4</h2>
+<p>Utilisez la directive <code>NgIf</code> sur chaque div qui contient une rubrique pour exécuter la méthode qui indique s'il est vrai ou faux que la rubrique concernée est active.</p>
+
+    </body>
+    </html>

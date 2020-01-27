@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les expressions - Exercice 4 - la directive NgModel</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-expressions---exercice-4---la-directive-ngmodel">Angular : les expressions - Exercice 4 - la directive NgModel</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-a4&quot; dans le dossier <code>src/app/exercices/1-expressions/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h3 id="important">Important</h3>
+<p>La directive <code>NgModel</code> fait partie de la gestion des formulaires dans Angular, pour l'utiliser nous devons importer le module <code>FormsModule</code> dans notre application.</p>
+<p>Dans le module principal (défini dans le fichier <code>src/app/app.module.ts</code>) ajoutez le module <code>FormsModule</code> à la liste des imports.</p>
+<h2 id="introduction">Introduction</h2>
+<p>La directive <code>NgModel</code> permet d'afficher la valeur d'une propriété de la classe et de refléter automatiquement la nouvelle valeur si l'utilisateur la modifie. De même la valeur sera mise à jour dans le template si elle est modifiée dans la classe (par exemple via un setter ou un appel à une méthode de la classe).</p>
+<p>La directive <code>NgModel</code> permet communément d'associer le contenu d'un champ de formulaire de type <code>input</code>, <code>select</code> ou <code>textarea</code> à une propriété de classe et d'effectuer automatiquement la liaison de données dans les 2 sens.</p>
+<h3 id="exemple">Exemple</h3>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"my-password"</span> [(<span class="hljs-attr">ngModel</span>)]=<span class="hljs-string">"userPassword"</span>&gt;</span>
+</div></code></pre>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#ngModel">La directive <code>ngModel</code></a>.</li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#two-way-binding-">La liaison de données dans les 2 sens</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/forms#two-way-data-binding-with-ngmodel">La liaison de données dans les 2 sens dans les formulaires</a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Dans la classe créez un propriété <code>nom</code> de type texte avec comme valeur une chaîne vide.</p>
+<h2 id="partie-2">Partie 2</h2>
+<p>Créez une propriété <code>nom</code> dans la classe du composant, qui est une chaîne de caractères vide.</p>
+<p>Créez un formulaire dans le template, contenant un champ texte.</p>
+<p>Sur le champ texte ajoutez la directive <code>ngModel</code> avec pour valeur la propriété <code>nom</code> (propriété de la classe).</p>
+<p>Dans un paragraphe sous le champ texte, affichez la valeur de la propriété <code>nom</code> via l'interpolation (<code>{{ }}</code>).</p>
+<p>Observez ce qui se passe lorsque vous modifiez le contenu du champ texte.</p>
+<p>C'est le mécanisme de <strong>&quot;liaison de données dans les 2 sens&quot;</strong> qui permet de partager une donnée entre le template et sa classe.</p>
+<p>Modifiez la valeur initiale de la propriété <code>nom</code> et observez l'affichage dans le template.</p>
+
+    </body>
+    </html>

@@ -4,22 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Maxime Péron - Jeu CV</title>
     <link rel="stylesheet" href="css/style.css">
     
-    <script src="js/page.js"></script>
-    <script src="js/objets/prototypes/personnage.js"></script>
-    <!-- <script src="js/objets/pnj.js"></script> -->
-    <!-- <script src="js/objets/bloc.js"></script> -->
-    <!-- <script src="js/objets/bonus.js"></script> -->
-    <!-- <script src="js/objets/map.js"></script> -->
-    <script src="js/main.js"></script>
 </head>
 <body>
     <header>
-        <h1>Stick Man Shooter</h1>
+        <h1>Maxime Péron - Développeur fullstack Javascript</h1>
     </header>
-
+    
     <nav>
         <ul>
             <li><a id="revenirJeu">Revenir au jeu</a></li>
@@ -28,18 +21,56 @@
             <li><a id="afficherContact">Contact</a></li>
         </ul>
     </nav>
-
+    
     <canvas id="section_jeu"></canvas>
-
-    <section id="section_contact">
-        <p>Péron Maxime</p>
-        <p>Adresse email : maximeperon08@gmail.com</p>
-        <p>linkedin : <a onclick="linkedin();">linkedin.maximeperon.fr</a></p>
+    
+    <section id="section_regle">
+        <p>Règles du jeu</p>
+        <p>Pour déplacer Stickman, utilisez les touches Q et D pour aller de droite à gauche, et la touche espace pour sauter</p>
+        <p>Pour tirer, visez correctement puis cliquez avec la souris</p>
+        <p>Lorsque vous aurez tué 5 zombies, un bonus apparaitra dans le ciel, tirez sur ces bonus pour acquérir toutes mes compétences</p>
+        <p>Une fois toutes les compétences acquises, vous aurez terminé le jeu et mon CV s'affichera</p>
+        <p>Attention tout de même, si un zombie vous touche, vous avez perdu</p>
+        <a href='#' id="jouer">JOUER</a>
+    </section>
+    
+    <section id="section_game_over">
+        <p>Game Over</p>
+        <a href="#" id ="reessayer">Rééssayer</a>
     </section>
 
-    <footer>
-
-    </footer>
+    <section id="section_win">
+        <p>You win</p>
+    </section>
     
+    <section id="section_cv">
+        <div id="img_cv">
+            <div id="filtre_cv">
+                <p>Ouvrir la version PDF</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="section_contact">
+        <p>Adresse email : maximeperon08@gmail.com</p>
+        <p>linkedin : <a href="http://linkedin.maximeperon.fr">linkedin.maximeperon.fr</a></p>
+        <p>Github : <a href="http://github.maximeperon.fr">github.maximeperon.fr</a></p>
+    </section>
+
+    <section>
+        <audio src="sound/gun.mp3" id="son_gun"></audio>
+        <audio src="sound/zombie.mp3" id="son_zombie"></audio>
+    </section>
+    
+    <script src="js/page.js"></script>
+    <script src="js/objets/cadre.js"></script>
+    <script src="js/objets/prototypes/personnage.js"></script>
+    <script src="js/objets/stickman.js"></script>
+    <script src="js/objets/viseur.js"></script>
+    <script src="js/objets/balle.js"></script>
+    <script src="js/objets/pnj.js"></script>
+    <script src="js/objets/bonus.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/event.js"></script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les expressions - Exercice 3 - la directive NgFor</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-expressions---exercice-3---la-directive-ngfor">Angular : les expressions - Exercice 3 - la directive NgFor</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-a3&quot; dans le dossier <code>src/app/exercices/1-expressions/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>La directive <code>NgFor</code> permet de répéter une branche de l'arborescence du DOM pour chaque élément d'une collection (tableau ou autre objet itérable).</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#ngfor">La directive NgFor</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/structural-directives#inside-ngfor">La microsyntaxe NgFor</a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Créez une nouvelle propriété « classe » qui est un objet avec des propriétés définisant votre classe :</p>
+<ul>
+<li>Son nom, qui est une chaîne de caractère,</li>
+<li>Sa spécialité, qui est une chaîne de caractère,</li>
+<li>La liste des inscrits, qui est un tableau contenant au moins 3 objets représentant des élèves.
+Chqaue élève possède les caractéristiques suivantes :
+<ul>
+<li>Son prénom, qui est une chaîne de caractère;</li>
+<li>Son nom, qui est une chaîne de caractère;</li>
+<li>Son âge, qui est un nombre.</li>
+</ul>
+</li>
+</ul>
+<h2 id="partie-2">Partie 2</h2>
+<p>À l'aide d'une expression, affichez dans le template pour chaque élève, son prénom, son nom et son âge, en utilisant la directive <code>NgFor</code>.</p>
+<h2 id="partie-3">Partie 3</h2>
+<p>À l'aide d'une expression, affichez à l'intérieur d'un paragraphe de texte le nombre d'inscrits (vous devez vous baser sur le tableau des inscrits pour obtenir cette information).</p>
+
+    </body>
+    </html>

@@ -1,16 +1,22 @@
+// Récupération des sons
+var sonGun = document.getElementById('son_gun');
+var sectionJeu = document.getElementById('section_jeu');
+
 document.addEventListener('keypress',function(e){
-    switch (e.code){
-        case 'Space':
+    switch (e.keyCode){
+        case 32:
             stickman.animationJump = true;
             if(stickman.jumpDown==false){
                 stickman.jumpUp = true;
             }
             break;
-        case 'KeyD': 
+        case 100:
+        case 68:
             stickman.animationDroite = true;
             stickman.animationGauche = false;
             break;
-        case 'KeyA': 
+        case 113:
+        case 81:
             stickman.animationGauche = true;
             stickman.animationDroite = false;
             break;
@@ -18,17 +24,17 @@ document.addEventListener('keypress',function(e){
 });
 
 document.addEventListener('keyup',function(e){
-    switch (e.code){
-        case 'Space':
+    switch (e.keyCode){
+        case 32:
             stickman.jumpUp = false;
             break;
 
-        case 'KeyD': 
+        case 68: 
             stickman.animationDroite = false;
             stickman.animationGauche = false;
             stickman.sourceX = 0;
             break;
-        case 'KeyA': 
+        case 81: 
             stickman.animationDroite = false;
             stickman.animationGauche = false;
             stickman.sourceX = 0;
@@ -42,13 +48,18 @@ document.addEventListener('mousemove', function(e){
 });
 
 document.addEventListener('click', function(){
-    if(balle.canShoot){
-        setTimeout(function(){
-            balle.canShoot = true;
-        },1000);
-        balle.canShoot = false;
-        balle.x = stickman.destinationX+stickman.gunX;
-        balle.y = stickman.destinationY+stickman.gunY;
-        balle.animation = true;
+    if(sectionJeu.style.display != 'none'){
+        if(balle.canShoot){
+            sonGun.play();
+            setTimeout(function(){
+                balle.canShoot = true;
+            },1000);
+            viseur.sourisXFixe = viseur.sourisX;
+            viseur.sourisYFixe = viseur.sourisY;
+            balle.canShoot = false;
+            balle.x = stickman.destinationX+stickman.gunX;
+            balle.y = stickman.destinationY+stickman.gunY;
+            balle.animation = true;
+        }
     }
 });

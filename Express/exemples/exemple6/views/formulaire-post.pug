@@ -1,0 +1,10 @@
+include includes/head.pug
+include includes/header.pug
+section
+  h2 Remplir le formulaire
+  form(action="/traitement-post" method="post")
+    label Votre identifiant
+    input(type="text" name="identifiant")
+    label Votre mot de passe
+    input(type="password" name="mdp")
+    input(type="submit" value="envoyer")

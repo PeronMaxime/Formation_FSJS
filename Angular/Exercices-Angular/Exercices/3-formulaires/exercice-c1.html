@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les formulaires - Exercice C1 - `NgModel` et `ngSubmit`</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-formulaires---exercice-c1---ngmodel-et-ngsubmit">Angular : les formulaires - Exercice C1 - <code>NgModel</code> et <code>ngSubmit</code></h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-c1&quot; dans le dossier <code>src/app/exercices/3-formulaires/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>La directive <code>NgModel</code> fait partie de la gestion des formulaires dans Angular, pour l'utiliser nous devons importer le module <code>FormsModule</code> dans notre application.</p>
+<p>Dans le module principal (défini dans le fichier <code>src/app/app.module.ts</code>) ajoutez le module <code>FormsModule</code> à la liste des imports.</p>
+<p>Une fois le mmodule <code>FormsModule</code> importé dans l'application, la directive <code>NgForm</code> est automatiquement active sur tous les formulaires. Cette directive a pour effet de bloquer le fonctionnement normal des formulaires : en effet ils ne seront pas soumis à l'adresse indiquée dans l'attribut <code>action</code>, et la page ne sera pas rechargée. Cela nous donne l'opportunité de traiter le formulaire entièrement en JavaScript.</p>
+<p>L'événement <code>ngSubmit</code> permet d'associer une expression Angular à l'événement <code>submit</code> des formulaires. Les actions utilisateurs qui ont pour conséquence de soumettre le formulaire (clic sur un bouton de type <code>submit</code>, ou appui sur la touche entrée dans un champ) exécuterons l'expression (qui peut être une méthode de la classe).</p>
+<h3 id="exemple--lexpression-ci-dessous-assigne-une-valeur-%c3%a0-la-propri%c3%a9t%c3%a9-resultat-quand-l%c3%a9v%c3%a9nement-javascript-submit-sera-%c3%a9mis">Exemple : L'expression ci-dessous assigne une valeur à la propriété <code>resultat</code> quand l'événement JavaScript <code>submit</code> sera émis.</h3>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">form</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">"resultat = texte"</span>&gt;</span>
+</div></code></pre>
+<h3 id="exemple--la-m%c3%a9thode-traiterleformulaire-du-composant-sera-invoqu%c3%a9e-quand-l%c3%a9v%c3%a9nement-javascript-submit-sera-%c3%a9mis">Exemple : La méthode <code>traiterLeFormulaire()</code> du composant sera invoquée quand l'événement JavaScript <code>submit</code> sera émis.</h3>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">form</span> (<span class="hljs-attr">ngSubmit</span>)=<span class="hljs-string">"traiterLeFormulaire()"</span>&gt;</span>
+</div></code></pre>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="https://angular.io/api/forms/NgForm#description">Description de <code>NgForm</code></a>.</li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#property-binding">La liaison de propriété</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#ngModel">La directive <code>ngModel</code></a>.</li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#two-way-binding-">La liaison de données dans les 2 sens</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/forms#two-way-data-binding-with-ngmodel">La liaison de données dans les 2 sens dans les formulaires</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/forms#submit-the-form-with-ngsubmit"><code>ngsubmit</code></a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<ul>
+<li>Dans la classe créez une propriété <code>adresseDeLImage</code> de type texte avec comme valeur une chaîne vide.</li>
+<li>Créez une seconde propriété <code>saisieUtilisateur</code> de type texte avec comme valeur une chaîne vide.</li>
+</ul>
+<h2 id="partie-2">Partie 2</h2>
+<p>Créez un formulaire contenant un champ de saisie texte et un bouton contenant le texte &quot;afficher&quot;. Avec <code>NgModel</code>, associez le contenu du champ de saisie à la propriété <code>saisieUtilisateur</code>.</p>
+<p>Via l'interpolation, affichez la valeur de <code>saisieUtilisateur</code> sous le chammp.</p>
+<h2 id="partie-3">Partie 3</h2>
+<p>Créez une balise image dont la propriété <code>src</code> est associée à la propriété <code>adresseDeLImage</code> de la classe du composant.</p>
+<p>Utilisez <code>ngSubmit</code> pour assigner à la propriété <code>adresseDeLImage</code> la valeur de <code>saisieUtilisateur</code>.</p>
+
+    </body>
+    </html>

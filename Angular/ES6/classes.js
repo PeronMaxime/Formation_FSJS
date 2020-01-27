@@ -1,0 +1,1 @@
+// ES6 introduit le mot-clé class

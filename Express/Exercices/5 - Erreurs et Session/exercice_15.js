@@ -1,0 +1,71 @@
+/*******************************************************
+**********************LES SESSIONS**********************
+*******************************************************/
+
+/*********************************
+***********Présentation***********
+*********************************/
+/*
+La gestion des sessions fait partie des fondements d'un site web.
+Pour gérer les sessions, nous utilisons les module (1) cookieParser et (2) express-session de la façon suivante :
+
+var express = require('express')
+var session = require('express-session');
+var cookieParser = require('cookie-parser')
+
+var app = express()
+app.use(cookieParser())
+
+app.use(session({
+    secret:'123456789SECRET',
+    saveUninitialized : false,
+    resave: false
+}));
+
+app.get('/', function(req, res) {
+  console.log("Cookies: ", req.cookies)
+  console.log(req.session);
+})
+*/
+
+
+/*********************************
+*************Exercice*************
+*********************************/
+/*
+Créez un fichier js avec Express qui affiche le contenu d'un template Pug.
+
+------ 1 ------
+Créez dans la variable de session un compteur en utilisant req.session.
+------ 2 ------
+Pour chaque connexion, incrémentez le compteur et affichez la valeur dans le navigateur.
+*/
+
+const express = require('express');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+
+const app = express();
+
+app.use(cookieParser());
+
+app.use(session({
+  secret:'123456789SECRET',
+  saveUninitialized : false,
+  resave: false
+}));
+
+app.get('/', (req, res) => {
+  if(req.session.compteur){
+    req.session.compteur ++;
+    res.send('nombre de vues : '+req.session.compteur);
+    console.log(req.session);
+  }
+  else{
+    req.session.compteur = 1;
+    res.send('test');
+  }
+  // console.log(req.cookies);
+});
+
+app.listen(1234);

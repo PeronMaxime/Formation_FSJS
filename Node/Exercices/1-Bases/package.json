@@ -1,0 +1,18 @@
+{
+  "name": "1-bases",
+  "version": "1.0.0",
+  "description": "",
+  "main": "exercice0.js",
+  "dependencies": {
+    "chalk": "^3.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

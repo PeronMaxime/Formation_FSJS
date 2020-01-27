@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les liaisons - Exercice B4 - la directive `NgStyle`</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-liaisons---exercice-b4---la-directive-ngstyle">Angular : les liaisons - Exercice B4 - la directive <code>NgStyle</code></h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-b4&quot; dans le dossier <code>src/app/exercices/2-proprietes-evenements/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>La directive <code>NgStyle</code> permet de manipuler plusieurs propriétés de style de façon dynamique, en fonction de propriétés du composant.</p>
+<p>On pourrait manipuler une propriété de style directement en utilisant la liaisons de propriété (<code>&lt;div [style.color]=&quot;myColor&quot;&gt;</code>) comme pour toutes les propriétés des éléments HTML. Mais la directive <code>NgStyle</code> permet de manipuler un objet comportant plusieurs clé représentant chacune une propriété CSS.</p>
+<h3 id="la-microsyntaxe-ngfor">La microsyntaxe <code>NgFor</code></h3>
+<p>La directive <code>NgFor</code> expose des propriétés, comme <code>index</code> (représentant l'indice de l'élément en cours dans la boucle) qui peuvent être utilisées dans le template.</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> *<span class="hljs-attr">ngFor</span>=<span class="hljs-string">"let item of items; let i=index"</span>&gt;</span>{{i + 1}} - {{item.name}}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li><a href="https://angular.io/api/common/NgStyle"><code>NgStyle</code></a>.</li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#ngstyle"><code>NgStyle</code></a>.</li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#event-binding-event">La liaison d'événement</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/user-input">Les événements utilisateur</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#ngfor">La directive NgFor</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/structural-directives#inside-ngfor">La microsyntaxe NgFor</a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Créez une propriété qui contient un tableau qui contient lui-même 3 objets qui décrivent des propriétés de style :</p>
+<ul>
+<li>largeur,</li>
+<li>hauteur,</li>
+<li>couleur de fond.</li>
+</ul>
+<p>Utilisez la directive <code>NgFor</code> pour appliquer ces propriétés de style à 3 éléments <code>div</code>.</p>
+<h2 id="partie-2">Partie 2</h2>
+<p>Créez une méthode qui prend en argument l'index d'un élément dans le tableau d'objets et qui modifie (incrémente) la propriété de style de largeur
+correspondant à l'objet dont l'index est fourni en argument.</p>
+<h2 id="partie-3">Partie 3</h2>
+<p>Utilisez l'événement <code>(click)</code> pour faire en sorte que lorsqu'on clique sur une de div, on déclenche la méthode qui modifie le style dont l'index est fourni en argument.</p>
+
+    </body>
+    </html>

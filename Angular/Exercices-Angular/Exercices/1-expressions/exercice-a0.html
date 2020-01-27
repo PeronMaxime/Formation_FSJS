@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular - Exercice 0</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular---exercice-0">Angular - Exercice 0</h1>
+<h2 id="m%c3%a9thodologie">Méthodologie</h2>
+<p>Pour chaque exercice, les sections utiles de la documentation sont indiquées soit en introduction, soit dans le cadre d'une partie spécifique. Les exercices sont construits de façon progressive et chaque nouvel exercice peut faire appel à des notions vues dans les précédents.</p>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<ul>
+<li>Créez un nouveau projet Angular nommé &quot;exercices&quot; avec le <a href="https://angular.io/cli">CLI Angular</a>.<br>
+<code>ng new exercices</code>.</li>
+<li>Dans cette application, démarrez le serveur de test.<br>
+<code>ng serve</code></li>
+<li>Créez un composant nommé &quot;exercice-a0&quot; dans le dossier <code>src/app/exercices/1-expressions</code>.<br>
+<code>ng generate component exercices/1-expressions/exercice-a0</code>.</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>La façon la plus simple d'afficher une propriété du composant dans le template est de lier cette propriété via l'interpolation.</p>
+<p>Pour utiliser l'interpolation, écrivez le nom d'une propriété de la classe du composant (définie dans le fichier TypeScript) dans le template associé (fichier HTML) entouré de doubles accolades : <code>{{ maPropriete }}</code>.</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/template-syntax">L'interpolation et les expressions de template</a>.
+<ul>
+<li><a href="https://angular.io/guide/template-syntax#template-expressions">Les expressions de template</a>.</li>
+</ul>
+</li>
+<li><a href="https://angular.io/guide/cheatsheet">Cheat Sheet</a></li>
+</ul>
+<h2 id="premiers-pas">Premiers pas</h2>
+<ul>
+<li>Videz entièrement le template du composant principal (<code>app.component.html</code>) et supprimez les propriétés de la classe correspondante.</li>
+<li>Créez une nouvelle propriété <code>titre</code> contenat le texte &quot;Exercices Angular&quot; et affichez-la dans dans le template principal en tant que contenu de <code>&lt;h1&gt;</code>.</li>
+</ul>
+
+    </body>
+    </html>

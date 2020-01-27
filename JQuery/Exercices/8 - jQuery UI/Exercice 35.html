@@ -3,7 +3,10 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 35</title>
-		<link rel="stylesheet" href="../src/styles1.css">
+    <link rel="stylesheet" href="../src/styles1.css">
+    <script src="../../jquery.js"></script>
+    <script src="../../jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 		<script>
       /*********************************
       ***********PRESENTATION***********
@@ -22,7 +25,16 @@
 
         Utilisez la méthodes resizable().
       */
-      
+      $(function(){
+        $('img').resizable();
+
+        $(window).mousemove(function(){
+          if($('img').width() <= $(window).width() / 4){
+            console.log('Au secours !!');
+          }
+        });
+
+      });
       /*
 			** 2 **
 				Quand l'image a une largeur inférieure au quart de la fenêtre, affichez un message d'alerte.
@@ -32,7 +44,7 @@
       </script>
   	</head>
   	<body>
-
+      <img src="https://picsum.photos/600/300" alt="">
   		<noscript>
   			<p>Veuillez activer JavaScript</p>
   		</noscript>

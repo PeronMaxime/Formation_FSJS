@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accueil</title>
+    <style>
+      #monP{
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        background-color: red;
+      }
+    </style>
+    <script>
+      window.addEventListener("DOMContentLoaded", function(){
+        var HTMLDivElement = window.document.getElementById("monP");
+        if ( !HTMLDivElement.style.left) {
+            HTMLDivElement.style.left = "0px";
+        }
+        var animationEnCours = false;
+        // Pour le setInterval
+        // var idInterval;
+        // Pour le requestAnimationFrame
+        var interpolations = function(){
+            HTMLDivElement.style.left = parseFloat(HTMLDivElement.style.left) + 1 + "px";
+            if (animationEnCours) {
+              window.requestAnimationFrame(interpolations);
+            }
+         }
+  
+        window.addEventListener("keydown", function(evtClavier){
+          // Pour le requestAnimationFrame
+          if (!animationEnCours) {
+            animationEnCours = true;
+            interpolations();
+          }
+          // Pour le setInterval
+          /*if (!animationEnCours) {
+            animationEnCours = true;
+            idInterval = window.setInterval(function() {
+              HTMLDivElement.style.left = parseFloat(HTMLDivElement.style.left) + 1 + "px";
+            }, 5);
+          }*/
+        });
+
+        window.addEventListener("keyup", function(event){
+            // Pour le setInterval
+            /*if (idInterval) {
+                window.clearInterval(idInterval);
+                animationEnCours = false;
+            }*/
+            // Pour le requestAnimationFrame
+            animationEnCours = false;
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="monP">Bienvenue </div>
+  </body>
+</html>

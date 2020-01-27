@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : Les services - Exercice D1 - Premier service</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-services---exercice-d1---premier-service">Angular : Les services - Exercice D1 - Premier service</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-d1&quot; dans le dossier <code>src/app/exercices/4-services/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<h3 id="les-services">Les services</h3>
+<p>Les services sont des classes qui offrent des fonctionnalités bien définies et qui peuvent être injectées dans des composants ou d'autres services.</p>
+<p>Angular sépare les composants des services pour accroître la modularité et la ré-utilisabilité. La classe d'un composant est dédiée à la gestion de la vue et délègue aux service la gestion de l'accès aux données (via un serveur tiers par exemple) et leur validation.</p>
+<p>Le rôle du composant doit être de gérer l'expérience utilisateur. Les propriétés et méthodes de sa classe doivent concerner la liaison de données avec le template et faire l'intermédiaire avec la logique de l'application, située dans des services.</p>
+<p>Les services effectuent des tâches comme la requête de données auprès d'autres serveurs, la validation de la saisie utilisateur, la gestion des erreurs et le reporting. En écrivant ces fonctionnalités dans des classes de services, on les rend accessibles à tous les composants et on limite la responsabilité des composants.</p>
+<p>L'injection de dépendances permet également de fournir différentes version d'un service en fonction du contexte, par exemple un service simulant certains comportements à des fins de test, sans accéder à la ressource réelle.</p>
+<h3 id="linjection-de-d%c3%a9pendances">L'injection de dépendances</h3>
+<p>L'injection de dépendances est un motif de conception (<em>design pattern</em>) fondamental dans Angular. Angular dispose de son propre framework d'injection de dépendances.</p>
+<p>Une dépendance est un service ou un objet dont une autre classe a besoin pour fonctionner. L'injection de dépendances est un motif de conception dans lequel les classes reçoivent les dépendances dont elles ont besoin, plutôt que de les créer elles-mêmes. Les classes qui consomment ces dépendances n'ont donc pas à connaître leurs modalités d'instanciation.</p>
+<p>Dans Angular, le framework d'injection de dépendances fournit les dépendances déclarées par une classe ou un composant au moment de son instanciation via le constructeur.</p>
+<h3 id="cr%c3%a9ation-dun-service">Création d'un service</h3>
+<p>Un service est une simple classe, généralement affublée du décorateur <code>@Injectable</code> (pour recevoir elle-même des dépendances injectées).</p>
+<p>Lorsque le décorateur <code>@Injectable</code> spécifie <code>providedIn: 'root'</code> le sercice sera injecté dans le module principal et disponible dans toute l'application.</p>
+<pre><code class="language-typescript"><div><span class="hljs-meta">@Injectable</span>({
+  providedIn: <span class="hljs-string">'root'</span>,
+})
+</div></code></pre>
+<p>Si <code>providedIn</code> n'est pas spécifié, le service devra être &quot;fourni&quot; explicitement dans un module, dans le tableau <code>providers</code>.</p>
+<p>Les classes de services sont instanciées une seule fois par injecteur, elles fournissent un &quot;singleton&quot;, c'est-à-dire la même instance unique partout où elle est injectée.</p>
+<h4 id="g%c3%a9n%c3%a9rer-un-service-avec-le-cli">Générer un service avec le CLI</h4>
+<pre><code class="language-bash"><div>ng generate service mon-dossier/mon-service
+</div></code></pre>
+<h3 id="utilisation-dun-service">Utilisation d'un service</h3>
+<p>Une fois créé, le service peut être injecté dans un composant ou dans un autre service.</p>
+<p>Il suffit d'affecter un type de classe à un argument passé au constructeur pour qu'Angular comprenne qu'il s'agit d'une instance gérée par l'injection de dépendances.</p>
+<pre><code class="language-typescript"><div><span class="hljs-keyword">import</span> { Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+
+<span class="hljs-comment">// Services</span>
+<span class="hljs-keyword">import</span> { TodoService } <span class="hljs-keyword">from</span> <span class="hljs-string">'src/app/todo/todo.service'</span>;
+
+<span class="hljs-meta">@Component</span>({
+  selector: <span class="hljs-string">'app-todo-list'</span>,
+  templateUrl: <span class="hljs-string">'./todo-list.component.html'</span>,
+  styleUrls: [<span class="hljs-string">'./todo-list.component.scss'</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> TodoListComponent {
+  tasks: <span class="hljs-built_in">string</span>[]; <span class="hljs-comment">// Une propriété de notre composant qui pourra être utilisée dans le template.</span>
+
+  <span class="hljs-keyword">constructor</span>(<span class="hljs-params">
+    <span class="hljs-comment">/**
+     * Le service est injecté dans le constructeur car c'est Angular qui se charge d'instancier les classes.
+     * Angular assignera à la propriété "todoService" (propriété de notre classe "TodoListComponent")
+     * la valeur du singleton (instance unique) créé à partir de la classe "TodoService".
+     * Notez la différence de syntaxe entre le nom de la propriété (qui commence par une minuscule)
+     * et le nom de la classe (qui commence par une majuscule par convention).
+     */</span>
+    <span class="hljs-keyword">private</span> todoService: TodoService,
+  </span>) {
+    <span class="hljs-keyword">this</span>.tasks = <span class="hljs-keyword">this</span>.todoService.getTasks(); <span class="hljs-comment">// On appelle ici une méthode du service injecté.</span>
+  }
+}
+</div></code></pre>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/singleton-services">Singleton services</a></li>
+<li>Guide : <a href="https://angular.io/guide/architecture-services">Introduction aux services et à l'injection de dependances</a></li>
+<li>Guide : <a href="https://angular.io/guide/dependency-injection">L'injection de dépendances dans Angular</a></li>
+<li>Guide : <a href="https://angular.io/guide/providers">Providers</a></li>
+<li>Guide : <a href="https://angular.io/guide/architecture#services-and-dependency-injection">Services and dependency injection</a></li>
+<li>Guide : <a href="https://angular.io/guide/hierarchical-dependency-injection">Les injecteurs hiérarchiques</a></li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>À l'aide du CLI Angular créez un service &quot;compteur&quot; qui contiendra une propriété privée numérique nommée <code>compteur</code> et 2 méthodes :</p>
+<ul>
+<li>une méthode publique <code>incrementer</code> qui permet d'incrémenter la propriété privée,</li>
+<li>une méthode publique <code>getCompteur</code> qui retourne la valeur de la propriété privée.</li>
+</ul>
+<h2 id="partie-2">Partie 2</h2>
+<p>Injectez le service créé dans votre composant &quot;exercice-d1&quot;.</p>
+<p>Dans le composant, créer une propriété <code>compteur</code> qui recevra la valeur du compteur du service quand le composant est instancié. Affichez cette valeur dans le template.</p>
+<p>Créez également un bouton avec une action au clic, qui appelle la méthode <code>incrementer()</code> du service.</p>
+
+    </body>
+    </html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contactez moi</title>
+  </head>
+  <body>
+    <h1>Contactez Moi</h1>
+    <p>Bienvenue, nous sommes le [DATE].</p>
+    <form method="POST" action="http://192.168.105.80:8080/merci?firstname=Charles&lastname=Mouloud">
+      <p>Prenom : <input type="text" value="" name="firstname"/></p>
+      <p>Nom : <input type="text" value="" name="lastname"/></p>
+      <p>Statut : <input type="text" value="" name="status"/></p>
+      <p><input type="submit" value="Envoyer"/></p>
+    </form>
+  </body>
+</html>

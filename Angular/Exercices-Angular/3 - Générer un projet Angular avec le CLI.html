@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Générer un projet Angular avec le CLI</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="g%c3%a9n%c3%a9rer-un-projet-angular-avec-le-cli">Générer un projet Angular avec le CLI</h1>
+<h2 id="documentation">Documentation</h2>
+<p><a href="https://angular.io/cli">Angular CLI</a></p>
+<h2 id="cr%c3%a9er-un-nouveau-projet">Créer un nouveau projet</h2>
+<p>Pour créer un nouveau projet on exécute la commande <code>ng new &lt;NOM_DU_DOSSIER&gt;</code>. Cette commande :</p>
+<ul>
+<li>crée le dossier spécifié,</li>
+<li>installe localement les dépendances (paquets npm),</li>
+<li>crée un squelette d'application Angular prête à fonctionner.</li>
+</ul>
+<pre><code class="language-language-bash"><div>ng new app-demo
+</div></code></pre>
+<p><a href="https://angular.io/cli/new">Documentation de la commande <code>new</code></a>.</p>
+<p>Le programme vous posera 2 questions :</p>
+<blockquote>
+<p>&quot;Would you like to add Angular routing&quot; -&gt; <strong>Yes</strong><br>
+&quot;Which stylesheet format would you like to use&quot; -&gt; <strong>SCSS</strong></p>
+</blockquote>
+<p>Le CLI installe ensuite les dépendances, ce qui peut prendre plusieurs minutes.</p>
+<p>Pour travailler dans le dossier du projet on se place dans le dossier créé, avec la commande <code>cd</code> :</p>
+<pre><code class="language-language-bash"><div>cd app-demo
+</div></code></pre>
+<p>On peut obtenir l'aide du programme avec la commande :</p>
+<pre><code class="language-language-bash"><div>ng help
+</div></code></pre>
+<p>On peut aussi obtenir de l'aide sur une fonction spécifique en indiquant le nom de la commande (ci-dessous <code>generate</code>) suivi de l'option <code>--help</code> :</p>
+<pre><code class="language-language-bash"><div>ng generate --help
+</div></code></pre>
+<h2 id="d%c3%a9marrer-un-serveur-de-test">Démarrer un serveur de test</h2>
+<p>Pour tester l'application en cours de développement, le CLI peut démarrer un petit server HTTP avec un système de <em>live-reload</em> qui permet de rafraîchir le navigateur à chaque enregistrement d'un fichier source.</p>
+<pre><code class="language-language-bash"><div>ng serve
+</div></code></pre>
+<p>Par défaut le serveur est disponible à l'adresse <a href="http://localhost:4200/">http://localhost:4200/</a>.</p>
+<p>Pour arrêter le serveur : <kbd>Ctrl + C</kbd> dans le terminal qui exécute le serveur.</p>
+<h3 id="avant-de-commencer">Avant de commencer</h3>
+<p>Lorsqu'on développe une application web on doit toujours ouvrir les outils de développement dans le navigateur et en particulier la console, pour repérer immédiatement :</p>
+<ul>
+<li>les erreurs de syntaxe (qui font planter l'application)</li>
+<li>certaines erreurs de logique (valeurs &quot;undefined&quot;)</li>
+<li>les messages informatifs affichés par le navigateur ou le framework.</li>
+</ul>
+<p>De même, on garde un œil sur la console du serveur de test, qui peut afficher des informations liées à la compilation TypeScript ou des messages du serveur de test.</p>
+<p>Lorsqu'on développe, on teste à chaque modification du code afin de repérer les erreurs le plus tôt possible. Si on ne respecte pas cette règle, on peut découvrir une erreur en aval, qui peut provenir d'une dizaine de modifications faites en amont.</p>
+<p>Si on respecte ce principe, (<em>test early, test often</em>) toute erreur provient presque certainement du dernier changement effectué.</p>
+<h2 id="utilisation-du-cli-dangular-pour-g%c3%a9n%c3%a9rer-des-parties-de-lapplication">Utilisation du CLI d'Angular pour générer des parties de l'application</h2>
+<p>Le CLI d'Angular permet de créer des applications basées sur des modèles prédfinis mais aussi, à l'intérieur de l'application, de créer des composants et autres types d'éléments d'une application Angular.</p>
+<h3 id="g%c3%a9n%c3%a9rer-un-contenu-code-scaffolding">Générer un contenu (<em>code scaffolding</em>)</h3>
+<p>La commande <code>ng generate</code> crée un type de contenu Angular. Le nom du type de structure sera suffixé au nom indiqué. Par exemple la commande:</p>
+<pre><code class="language-bash"><div>ng generate service user
+</div></code></pre>
+<p>Créera un service dont la classe aura pour nom &quot;UserService&quot;.</p>
+<p>Note : les noms de classes commencent toujours par une majuscule par convention (PascalCase). Les noms de fichiers et de dossiers sont générés avec des tirets (kebab-case).</p>
+<pre><code class="language-bash"><div>ng generate component fiche-produit
+</div></code></pre>
+<p><a href="https://angular.io/cli/generate#ng-generate">Documentation de la commande <code>generate</code></a>.</p>
+<h2 id="g%c3%a9n%c3%a9rer-lapplication-%c3%a0-publier">Générer l'application à publier</h2>
+<p>Pour générer une version prête à publier (mettre en ligne) on utilisera la commande <code>ng build</code>. Cette commande génère l'application dans un dossier nommé &quot;dist&quot;, à la racine du projet. Pour créer une version optimisée prête à mettre en ligne on utilisera le flag <code>--prod</code>.</p>
+<pre><code class="language-bash"><div>ng build --prod
+</div></code></pre>
+<p>Le contenu du dossier <code>./dist</code> peut être directement mis en ligne sur un hébergement adapté.</p>
+<p><a href="https://angular.io/cli/build#ng-build">Documentation de la commande <code>build</code></a>.</p>
+
+    </body>
+    </html>

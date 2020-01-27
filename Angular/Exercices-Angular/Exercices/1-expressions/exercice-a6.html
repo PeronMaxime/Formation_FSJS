@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les expressions - Exercice 6 - les filtres</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-expressions---exercice-6---les-filtres">Angular : les expressions - Exercice 6 - les filtres</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-a6&quot; dans le dossier <code>src/app/exercices/1-expressions/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>Les filtres (<em>pipes</em> en anglais)) sont des fonctions de transformation qui prennent une valeur en argument et qui retournent une valeur modifiée. Angular prévoit de pouvoir utiliser ces fonctions directement dans un template sur une valeur à afficher. Pour utiliser un filtre on écrit le symbole tube ou barre verticale (<kbd>|</kbd>) après une valeur entre accolades, suivi du nom du filtre.</p>
+<p>Angular fourni plusieurs filtres répondant à des besoins courants, comme :</p>
+<ul>
+<li><a href="https://angular.io/api/common/CurrencyPipe"><code>CurrencyPipe</code></a> pour l'affichage des valeurs monétaires</li>
+<li><a href="https://angular.io/api/common/DatePipe"><code>DatePipe</code></a> pour formatter les dates</li>
+<li><a href="https://angular.io/api/common/SlicePipe"><code>SlicePipe</code></a> pour afficher une partie d'un tableau ou itérable.</li>
+</ul>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/pipes">Les filtres</a>.</li>
+<li>Guide : <a href="https://angular.io/api?type=pipe">Liste des filtres prédéfinis</a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Initialisez un tableau qui contient 3 objets qui représentent des voitures. Une voiture a pour caractéristiques :</p>
+<ul>
+<li>Son modèle, qui est un texte;</li>
+<li>Sa puissance, qui est un texte;</li>
+<li>Son prix, qui est un nombre;</li>
+<li>Sa date de fabrication, qui est un nombre (un timestamp).</li>
+</ul>
+<h2 id="partie-2">Partie 2</h2>
+<p>À l'aide de la directive <code>NgFor</code>, affichez pour chacune des voitures :</p>
+<ul>
+<li>Son modèle, formaté avec la première lettre de chaque mot en majuscule,</li>
+<li>Sa puissance, formatée en majuscule,</li>
+<li>Son prix, formaté avec le filtre approprié,</li>
+<li>Sa date de fabrication, formatée avec le filtre approprié.</li>
+</ul>
+
+    </body>
+    </html>

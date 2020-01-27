@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les expressions - Exercice 2</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-expressions---exercice-2">Angular : les expressions - Exercice 2</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-a2&quot; dans le dossier <code>src/app/exercices/1-expressions/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>La façon la plus simple d'afficher une propriété du composant dans le template est de lier cette propriété via l'interpolation.</p>
+<p>Pour utiliser l'interpolation, écrivez une valeur, ou le nom d'une propriété de la classe du composant (définie dans le fichier TypeScript), dans le template associé (fichier HTML) entouré de doubles accolades : <code>{{ maPropriete }}</code>.</p>
+<p>L'interpolation consiste à évaluer l'expression entres accolades et à afficher le résultat de cette évaluation en texte.</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/template-syntax">L'interpolation et les expressions de template</a>.
+<ul>
+<li><a href="https://angular.io/guide/template-syntax#template-expressions">Les expressions de template</a>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Dans le composant, créez une propriété <code>promotions</code>, de type tableau, qui contient 5 éléments numériques qui sont les 5 dernières années (2015 à 2019).
+À l'aide d'une expression affichez votre année de promotion dans un paragraphe du template.</p>
+<h2 id="partie-2">Partie 2</h2>
+<p>Créez une nouvelle propriété « classe » qui est un objet avec des propriétés définisant votre classe :</p>
+<ul>
+<li>Son nom, qui est une chaîne de caractère,</li>
+<li>Sa spécialité, qui est une chaîne de caractère,</li>
+<li>Son nombre d'inscrits, qui est un nombre</li>
+</ul>
+<p>À l'aide d'une expression, affichez dans le template le nom de votre classe avec sa spécialité sur une même ligne.</p>
+<p>Affichez sur une autre ligne le nombre d'inscrits de votre classe.</p>
+
+    </body>
+    </html>

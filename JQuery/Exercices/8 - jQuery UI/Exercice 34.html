@@ -4,6 +4,9 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 34</title>
 		<link rel="stylesheet" href="../src/styles1.css">
+		<script src="../../jquery.js"></script>
+		<script src="../../jquery-ui.js"></script>
+		
 		<script>
       /*********************************
       ***********PRESENTATION***********
@@ -22,17 +25,41 @@
         
         Utilisez la méthode draggable().
 			*/
+			$(function(){
+				var pos1 = $('#un').position();
+				var pos2 = $('#deux').position();
+				console.log(pos1);
+				console.log(pos2);
+				$('img').draggable();
 
+				$('button').click(function(){
+					$('#un').css({top: pos1.top, left: pos1.left});
+					$('#deux').css({top: pos2.top, left: pos2.left});
+				});
+			});
 			/*
 			** 2 **
 				Prévoyez un bouton mise à zéro qui replace les images à leur emplacement d'origine.
         
         Utilisez les méthodes click() et css().
 			*/
-    </script>
+	</script>
+	<style>
+		img{
+			position: absolute;
+		}
+		#un{
+			left: 100px;
+		}
+		#deux{
+			left: 600px;
+		}
+	</style>
 	</head>
 	<body>
-
+		<img id="un" src="https://picsum.photos/400/300" alt="">
+		<img id="deux" src="https://picsum.photos/400/300" alt="">
+		<button>Remise à zéro</button>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>
 		</noscript>

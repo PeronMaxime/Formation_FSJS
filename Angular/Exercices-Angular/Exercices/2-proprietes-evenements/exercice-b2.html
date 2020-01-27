@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les liaisons - Exercice B2 - la liaison d'événements (_event binding_)</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-liaisons---exercice-b2---la-liaison-d%c3%a9v%c3%a9nements-event-binding">Angular : les liaisons - Exercice B2 - la liaison d'événements (<em>event binding</em>)</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-b2&quot; dans le dossier <code>src/app/exercices/2-proprietes-evenements/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>Nous avons vu dans l'exercice précédant qu'il est possible d'affecter des valeurs utilisées dans le template à partir de la classe du composant, c'est la laison de propriété.</p>
+<p>Il existe un moyen de communniquer dans l'autre sens : du template vers la classe, ou de la <em>vue</em> vers le <em>modèle</em>. Il s'agit de la liaison événementielle.</p>
+<p>Angular nous fournit un moyen de gérer les actions de l'utilisateur, à travers les événements DOM que vous connaissez déjà, comme <code>click</code>, <code>mouseover</code>, etc. ou bien comme nous le verrons plus tard avec des événements custom.</p>
+<p>Pour gérer un évément sur une élément de la vue, on indique le nom de l'événement *<em>entre parenthèses</em> suivi du nom d'une méthode de la classe.</p>
+<p>Exemple :</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">div</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"faireQuelqueChose()"</span>&gt;</span>Action !<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+<p>Dans ce cas <code>faireQuelqueChose()</code> est une méthode qui doit exister dans la classe du composant.</p>
+<p>La liaison événementielle (<code>(event)</code>) est unidirectionnelle, cette fois depuis la vue (template / HTML) vers le modèle (classe).</p>
+<h3 id="remarque">Remarque :</h3>
+<p>Nous avons déjà rencontré cette syntaxe (les parenthèses entourant le nom de l'événement) avec <code>NgModel</code>, qui effectue une liaison automatique dans les 2 sens. C'est pour cette raison que <code>NgModel</code> combine les crochets (liaison de propriété) et les parenthèses (liaison d'événement).</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#event-binding-event">La liaison d'événement</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/user-input">Les événements utilisateur</a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Créez une propriété numérique dans la classe du composant avec une valeur initiale de 0, ainsi qu'une méthode qui incrémente cette valeur de 1.</p>
+<h2 id="partie-2">Partie 2</h2>
+<p>Dans le template :</p>
+<ul>
+<li>affichez la valeur numérique dans un paragraphe,</li>
+<li>ajoutez un bouton qui exécute la méthode d'incrémentation à chaque clic.</li>
+</ul>
+<h2 id="partie-3">Partie 3</h2>
+<p>Modifiez la méthode pour faire en sorte que si l'incrémentation du nombre atteint 10, une décrémentation se produise et que si la décrémentation atteint 0 une incrémentation se produise (vous allez devoir créer un propriété qui vous indique si vous devez incrémenter/décrémenter).</p>
+<h2 id="partie-4">Partie 4</h2>
+<p>Faites en sorte que le texte du bouton affiche le mot &quot;incrémentation&quot; lorsque l'incrémentation se produit mais le mot &quot;décrémentation&quot; lorsque la décrémentation se produit. Pour cela remplacez le texte du bouton par une expression qui utilise une propriété de la classe que la méthode modifiera selon le cas de figure.</p>
+
+    </body>
+    </html>

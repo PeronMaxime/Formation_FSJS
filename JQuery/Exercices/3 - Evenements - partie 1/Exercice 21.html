@@ -4,6 +4,7 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 21</title>
 		<link rel="stylesheet" href="../src/styles1.css">
+		<script src="../../jquery.js"></script>
 		<script>
       /*********************************
       ***********PRESENTATION***********
@@ -28,7 +29,19 @@
         Utilisez les méthodes focus(), text() et attr().
       */
        
+		$(function(){
+			$('input').focus(function(){
+				$('section p:last-child').text('Veuillez saisir le '+$(this).attr('name'));
+			});
 
+			$('input').blur(function(){
+				$('section>div>p:first-child').text($(this).val());
+			});
+
+			$('input').change(function(){
+				alert('Vous avez changé la saisie');
+			});
+		});
       /*
       ** 2 **
         Ajoutez au code précédent la fonction suivante :
@@ -37,6 +50,7 @@
         Utilisez les méthodes blur(), val() et text().
       */
 
+		
       /*
       ** 3 **
         Ajoutez au code précédent la fonction suivante :

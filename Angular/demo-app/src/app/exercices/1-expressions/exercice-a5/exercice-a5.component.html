@@ -1,0 +1,19 @@
+<h2>Exercice a5</h2>
+
+<form action="#">
+    <select name="couleur" id="couleur" [(ngModel)]="couleur">
+        <option value="bleu">bleu</option>
+        <option value="blanc">blanc</option>
+        <option value="rouge">rouge</option>
+        <option value="bleu et blanc">bleu et blanc</option>
+        <option value="bleu et rouge">bleu et rouge</option>
+        <option value="rouge et blanc">rouge et blanc</option>
+        <option value="bleu blanc rouge">bleu blanc rouge</option>
+    </select>
+</form>
+
+<p>la couleur : {{couleur}}</p>
+
+<div id="bleu" *ngIf="couleurBleu()"></div>
+<div id="blanc" *ngIf="couleurBlanche()"></div>
+<div id="rouge" *ngIf="couleurRouge()"></div>

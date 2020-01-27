@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les liaisons - Exercice B5 - les références de template</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-liaisons---exercice-b5---les-r%c3%a9f%c3%a9rences-de-template">Angular : les liaisons - Exercice B5 - les références de template</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-b5&quot; dans le dossier <code>src/app/exercices/2-proprietes-evenements/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>Avec les références de template on obtient une référence à l'élément HTML qui porte la référence, on peut donc accéder à toutes les propriétés de cet élément HTML.</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"nom"</span> #<span class="hljs-attr">inputElementRef</span>&gt;</span>
+{{ inputElementRef.name }} <span class="hljs-comment">&lt;!-- Affichera "nom" qui est la valeur de l'attribut (propriété DOM) "name" --&gt;</span>
+</div></code></pre>
+<p>Note: Le nom de la référence utilisée dans le template doit être unique poour ne pas entrer en conflit avec d'autres références de template.</p>
+<p>Nous verrons dans d'autres exercices que les références de template peuvent aussi pointer vers des directives qui fournissent un contenu différent de l'élément HTML.</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : (<a href="https://angular.io/guide/template-syntax#template-reference-variables-var">les références de template (<em><code>template reference variable</code></em>)</a>)</li>
+<li><a href="https://angular.io/guide/template-syntax#ref-vars">https://angular.io/guide/template-syntax#ref-vars</a></li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Créez un élément <code>&lt;h3&gt;</code> qui contient du texte et qui a un attribut <code>title</code> contenant également une valeur texte.</p>
+<p>Donnez une référence de template à cet élément <code>&lt;h3&gt;</code> et affichez dans 2 paragraphes séparés, en utilisant les propriétés DOM appropriées :</p>
+<ul>
+<li>le contenu texte du <code>&lt;h3&gt;</code></li>
+<li>le contenu de l'attribut <code>title</code> du <code>&lt;h3&gt;</code></li>
+</ul>
+
+    </body>
+    </html>

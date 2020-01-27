@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les expressions - Exercice 5 - la directive NgIf</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-expressions---exercice-5---la-directive-ngif">Angular : les expressions - Exercice 5 - la directive NgIf</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-a5&quot; dans le dossier <code>src/app/exercices/1-expressions/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>La directive <code>NgIf</code> permet de supprimer ou insérer un élément du DOM. La directive <code>NgIf</code> prend une expression qui sera évaluée à une valeur booléenne : si la valeur obtenue est <code>false</code> le noeud DOM est supprimé, si la valeur obtenue est <code>true</code> le noeud DOM est inséré à l'endroit ou la directive est utilisée.</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/displaying-data#conditional-display-with-ngif">Affichage conditionnel aavec NgIf</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/structural-directives#structural-directives">Les directives structurelles</a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Créez un formulaire avec une liste de sélection. Les différentes options sont :</p>
+<ul>
+<li>bleu;</li>
+<li>blanc;</li>
+<li>rouge;</li>
+<li>bleu et blanc;</li>
+<li>bleu et rouge;</li>
+<li>rouge et blanc;</li>
+<li>bleu blanc rouge.</li>
+</ul>
+<h2 id="partie-2">Partie 2</h2>
+<p>Créez 3 div auxquelles vous affecterez des propriétés de style de telle sorte qu'elles s'affichent sous la forme de 3 ronds de couleur (bleu, blanc et rouge).</p>
+<h2 id="partie-3">Partie 3</h2>
+<p>Combinez la directive qui vous permet d'associer une valeur de formulaire à une propriété du composant, ainsi que l'utilisation de directive NgIf pour faire en sorte que lorsqu'on effectue un choix dans la liste de sélection on ne voit apparaître que les div qui correspondent au choix effectué.</p>
+<p>Indication : Les expressions peuvent contenir des calculs logiques. Exemple : <code>{{ 1 &amp;&amp; 0 }}</code> donne <code>false</code> alors que <code>{{ 1 || 0 }}</code> donne <code>true</code>.</p>
+
+    </body>
+    </html>

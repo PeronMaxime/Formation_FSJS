@@ -1,0 +1,12 @@
+doctype html
+head
+  title= title
+  link(rel="stylesheet" href="css/style.css")
+body
+  h1 Le titre de la page est : #{h1}
+  nav
+    ul
+      each entree in menu
+        li
+          a(href=entree[0]) #{entree[1]}
+  p Un message dans la page

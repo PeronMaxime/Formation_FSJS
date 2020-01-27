@@ -1,0 +1,5 @@
+<h2>Exercice a6</h2>
+
+<ul>
+    <li *ngFor="let voiture of voitures">La voiture {{voiture.modele.toUpperCase() | slice:0:1}}{{voiture.modele | slice:1}} a une puissance de {{voiture.puissance.toUpperCase()}}, son prix est de {{voiture.prix | currency}} et date de {{voiture.date | date}}</li>
+</ul>

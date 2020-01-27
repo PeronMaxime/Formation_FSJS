@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les liaisons - Exercice B1 - la liaison de propriété (_property binding_)</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-liaisons---exercice-b1---la-liaison-de-propri%c3%a9t%c3%a9-property-binding">Angular : les liaisons - Exercice B1 - la liaison de propriété (<em>property binding</em>)</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-b1&quot; dans le dossier <code>src/app/exercices/2-proprietes-evenements/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>En HTML on peut définir les propriétés de certains éléments en utilisant des attributs, comme l'attribut <code>src</code> pour la balise <code>img</code>. Cet attribut permet de spécifier l'adresse de l'image à afficher. Mais la valeur de l'attribut est statique et ne peut être constituée que d'une chaîne de caractères.</p>
+<p>Angular permet de lier une propriété (par exemple <code>src</code>) d'un élément (par exemple <code>img</code>) à une propriété de la classe du composant. Si la valeur de la propriété change dans la classe, la nouvelle valeur sera automatiquement reflétée dans la vue.</p>
+<p>De plus la valeur d'une propriété liée peut être de n'importe quel type, y compris des tableaux ou des objets.</p>
+<h3 id="note--diff%c3%a9rence-entre-attribut-et-propri%c3%a9t%c3%a9">Note : différence entre attribut et propriété</h3>
+<p>Un <strong>attribut</strong> est une partie de la balise écrite, en texte, dans le code source qui sert à générer le DOM. Une <strong>propriété</strong> d'un élément est une caractéristique générée par le DOM et manipulable en JavaScript. En général, les attributs sont un moyen pour fournir les valeurs au éléments du DOM. L'attribut <code>src</code> en texte dans le code source fournit la valeur (URL) associée à la propriété du même nom pour le noeud DOM de type <code>Image</code> créé par le navigateur.</p>
+<p>Angular exploite cette syntaxe familiaire, celle des attributs, pour créer un mécanisme plus puissant et plus flexible.</p>
+<h3 id="exemple">Exemple</h3>
+<p>Lorsqu'on veut affecter la valeur d'une propriété d'élément à partir d'une propriété du composant on utilise la syntaxe <code>[]</code>, par exemple pour la propriété <code>src</code> d'une image on écrira :</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">img</span> [<span class="hljs-attr">src</span>]=<span class="hljs-string">"monImage"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">""</span>&gt;</span>
+</div></code></pre>
+<p><strong>Attention :</strong> dans ce cas la propriété <code>monImage</code> contient soit une chaîne de caractères (qui pourra être utilisée directement), soit une expression qui devra être évaluée pour obtenir une chaîne de caractères valide pour ce type de propriété.</p>
+<p>Lorsqu'Angular rencontre un propriété liée avec la syntaxe <code>[]</code> dans le template, il évalue cette valeur et utilise la valeur produite qui doit être une valeur valide pour la propriété de l'élément considéré. Dans le cas de la propriété <code>src</code> d'une image, il doit s'agir d'une chaîne de caractère.</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#property-binding">La liaison de propriété</a>.</li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Trouvez sur Internet une image de chien et utilisez son URL comme valeur d'une propriété <code>chien</code> dans votre composant.</p>
+<p>Dans le template, créez une balise <code>img</code> qui utilise la liaison de propriété pour afficher l'image du chien.</p>
+<h2 id="partie-2">Partie 2</h2>
+<p>Trouvez sur Internet 3 images de chats et initialisez dans le composant un tableau à 3 éléments, nommé <code>chats</code>, qui sont les URLs de ces 3 images.</p>
+<p>Dans le template, créez 3 balises <code>img</code> qui utilisent la liaison de propriété pour afficher chacune une image de chat issue de votre tableau.</p>
+<h2 id="partie-3">Partie 3</h2>
+<p>Améliorez votre template en limitant les répétitions : utilisez la directive <code>NgFor</code>.</p>
+
+    </body>
+    </html>

@@ -1,0 +1,13 @@
+doctype
+head
+  title Page d'accueil
+body
+  h1 Page d'accueil
+  each film in lesFilms
+    p
+      ul
+        - if (!film.nom) film.nom = film.titre
+        li Le titre du film est #{film.nom}
+        if film.duree
+          li Durée : #{film.duree} mn.
+    

@@ -1,0 +1,17 @@
+include ./includes/head.pug
+body
+  h1 Création d'articles
+  form(action="/create_article" method="POST")
+    label(for="titre") Titre :
+    input(type="text" name="titre")
+    label(for="contenu") Contenu :
+    input(type="text" name="contenu")
+    label(for="auteur") Auteur :
+    input(type="text" name="auteur")
+    label(for="date") Date
+    input(type="date" name="date")
+    input(type="submit")
+  if(done)
+    p= done
+  if(err)
+    p= err

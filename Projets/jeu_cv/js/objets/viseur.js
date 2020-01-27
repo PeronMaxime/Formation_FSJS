@@ -1,6 +1,8 @@
 var Viseur = function(){
     this.sourisX = 0;
     this.sourisY = 0;
+    this.sourisXFixe = 0;
+    this.sourisYFixe = 0;
 };
 
 Viseur.prototype.drawLine = function(){

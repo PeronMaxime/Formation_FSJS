@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : Le routage - Exercice E1</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--le-routage---exercice-e1">Angular : Le routage - Exercice E1</h1>
+<h2 id="introduction">Introduction</h2>
+<p>Le routage dans Angular est un routage côté client. Il ne s'agit en aucun cas de faire appel au serveur car nous sommes dans le contexte d'une SPA.</p>
+<p>Le principe du routage consiste tout simplement à faire correspondre une URL à un composant de l'application. Par exemple je souhaite que l'adresse <code>https://example.com/user/profile</code> affiche mon composant &quot;profile&quot; qui affiche les détails de mon compte utillsateur.</p>
+<p>Pour pouvoir utiliser le routage dans Angular il faut importer le module <code>RouterModule</code>, soit dans le module principal soit dans un module dédié au routage.</p>
+<p>Lorsqu'on crée un projet avec le CLI en intégrant le routage, cette configuration est déjà faite et un module dédié au routage (<code>AppRoutingModule</code>) est créé.</p>
+<h3 id="d%c3%a9finir-des-routes">Définir des routes</h3>
+<p>Un objet de définition de route typique est constitué de 2 propriétés :</p>
+<ul>
+<li><code>path</code> qui est un texte correspondant au chemin,</li>
+<li><code>component</code> qui le nom d'une classe de composant.</li>
+</ul>
+<pre><code class="language-typescript"><div><span class="hljs-keyword">const</span> routes: Routes = [
+  {
+    path: <span class="hljs-string">'exercices/1-expressions/exercice2'</span>,
+    component: Exercice2Component,
+  }
+]
+</div></code></pre>
+<p>La liste des routes est passée via la méthode <code>forRoot</code> de <code>RouterModule</code> dans les imports de notre module de routage.</p>
+<pre><code class="language-typescript"><div><span class="hljs-meta">@NgModule</span>({
+  imports: [
+    RouterModule.forRoot(routes) <span class="hljs-comment">// tableau de routes.</span>
+  ],
+  exports: [RouterModule]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> AppRoutingModule { }
+</div></code></pre>
+<h3 id="chargement-des-composants-rout%c3%a9s">Chargement des composants routés</h3>
+<p>Maintenant que nous avons défini une route, nous devons définir l'endroit ou charger le composant correspondant dans notre application.</p>
+<p>Angular propose le composant <code>&lt;router-outlet&gt;</code> qui sera le point d'injection du composant correspondant au chemin actif.</p>
+<p>À chaque changement d'URL, le nouveau composant sera chargé dans <code>&lt;router-outlet&gt;</code> à la place du précédent.</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/router">Routage &amp; Navigation</a></li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Mettez en place un routage pour tous les exercices créés précédemment.</p>
+<h2 id="partie-2">Partie 2</h2>
+<p>Créez un composant &quot;menu&quot; qui rassemble tous les liens vers les différents exercices et affichez-le au-dessus de <code>&lt;router-outlet&gt;</code> dans <code>app.component.html</code>.</p>
+
+    </body>
+    </html>

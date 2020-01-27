@@ -15,26 +15,43 @@ Balle.prototype.draw = function(){
   cadre.context.fill();
 }
 
-Balle.prototype.update = function(){
+Balle.prototype.update = function(zombie, compteurZ, bonus, nombreBonusObtenus){
   // Update la position de la balle
-  var distanceX = viseur.sourisX-(stickman.destinationX+stickman.gunX);
+  var distanceX = viseur.sourisXFixe - (stickman.destinationX+stickman.gunX);
 
-  var distanceY = viseur.sourisY - (stickman.destinationY+stickman.gunY);
+  var distanceY = viseur.sourisYFixe - (stickman.destinationY+stickman.gunY);
 
   var hypothenuse = Math.sqrt(distanceX*distanceX + distanceY*distanceY);
 
   if(balle.x > cadre.largeur || balle.x < 0 || balle.y > cadre.hauteur || balle.y < 0){
     balle.animation = false;
+    return 0;
     
   }else{
     balle.x += distanceX*32/hypothenuse;
     balle.y += distanceY*32/hypothenuse;
   }
-
-  if(balle.x >= pnj.destinationX && balle.x <= pnj.destinationX+64 && balle.y >= pnj.destinationY && balle.y <= pnj.destinationY+64){
-    alert('touché');
-    balle.animation = false;
+  if(zombie.length>0){
+    for(var i=0; i<compteurZ; i++){
+      if(balle.x >= zombie[i].destinationX && balle.x <= zombie[i].destinationX+150 && balle.y >= zombie[i].destinationY && balle.y <= zombie[i].destinationY+180){
+        balle.animation = false;
+        zombie.splice(i, 1, '');
+        return 1;
+      }
+    }
   }
+
+  for(var j=0; j<bonus.length; j++){
+    if((balle.x >= bonus[j].destinationX && balle.x <= bonus[j].destinationX+64 && balle.y >= bonus[j].destinationY && balle.y <= bonus[j].destinationY+64) && bonus[j].debloque && bonus[j].obtenu == false){
+      balle.animation = false;
+      // bonus.splice(j, 1, '');
+      bonus[j].obtenu = true;
+      bonus[j].idObtenu = nombreBonusObtenus;
+      return 2;
+    }
+  }
+
+  return 0;
   
   
 

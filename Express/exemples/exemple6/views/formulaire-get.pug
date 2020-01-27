@@ -1,0 +1,13 @@
+include includes/head.pug
+include includes/header.pug
+section
+  h2 Remplir le formulaire
+  form(action="/traitement-get" method="get")
+    label Votre prénom
+    input(type="text" name="prenom")
+    label Votre choix de couleur
+    select(name="choix")
+      //itération pour le select de la propriété couleurs fournie dans le res.render
+      each uneCouleur in couleurs
+        option(value=uneCouleur.toLowerCase()) #{uneCouleur}
+    input(type="submit" value="envoyer")

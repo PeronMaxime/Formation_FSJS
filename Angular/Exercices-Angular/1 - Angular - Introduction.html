@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular - Introduction</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular---introduction">Angular - Introduction</h1>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="https://angular.io/">Site officiel</a>
+<ul>
+<li><a href="https://angular.io/start">Guide</a></li>
+<li><a href="https://angular.io/guide/cheatsheet">Cheat Sheet</a></li>
+<li><a href="https://angular.io/cli">Angular CLI</a></li>
+<li><a href="https://angular.io/tutorial">Tutoriel</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<ul>
+<li>Un framework qui permet de créer des <em>Single Page Applications</em> (SPA) adaptées à la fois au mobile et au desktop.</li>
+<li>Architecture modulaire.</li>
+<li>Dans Angular on ne manipule pas le DOM directement, on manipule des données et le framework reflète les changements dans la vue.</li>
+</ul>
+<h2 id="single-page-application">Single Page Application</h2>
+<p>Une &quot;Application web monopage&quot; (<em>Single Page Application</em>) est un site web qui reste sur une seule page sans jamais recharger la page (on ne voit jamais l'icône de rafraîchissement de page du navigateur s'animer). Le contenu additionnel (non chargé initialement) est téléchargé via des requêtes HTTP en tâche de fond (&quot;Ajax&quot;) et injecté dans le DOM.</p>
+<p>On ne recharge jamais une page complète, on charge seulement le contenu (article ou résultat de recherche qui s'affiche dans la page) ou l'information nécessaire, au bon moment (ex : connexion réussie, saisie invalide dans un champ, etc.).</p>
+<p>Les données à sauvegarder peuvent être envoyées à un serveur en HTTP ou sauvegardées localement. Dans le premier cas, le serveur doit être configuré pour communiquer avec une base de données et avec l'application SPA (typiquement via une <a href="https://fr.wikipedia.org/wiki/Representational_state_transfer">API REST</a> HTTP).</p>
+<h3 id="avantages">Avantages</h3>
+<ul>
+<li>Économie de bande passante (serveur et client),</li>
+<li>Économie de resources serveur, on dépporte les actions légères sur le client,</li>
+<li>Application plus réacte pour l'utilisateur (le code est déjà chargé).</li>
+</ul>
+<p>On utilise le &quot;routage&quot; pour associer des vues à des URL. Une &quot;route&quot; est constituée :</p>
+<ul>
+<li>d'une adresse web (URL) ou fragment d'adresse permettant de reconstituer une URL,</li>
+<li>d'un composant ou d'un module qui sera chargé quand on accède à cette URL,</li>
+<li>des règles (facultatives) régissant l'accès à cette route (<em>guard</em>).</li>
+</ul>
+
+    </body>
+    </html>

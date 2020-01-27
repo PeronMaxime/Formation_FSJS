@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les liaisons - Exercice B6 - `$event`</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-liaisons---exercice-b6---event">Angular : les liaisons - Exercice B6 - <code>$event</code></h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-b6&quot; dans le dossier <code>src/app/exercices/2-proprietes-evenements/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>Lorsqu'on crée une liaison d'événement, sur un événement de souris par exemple, on peut récupérer l'événement DOM lui-même en paramètre en utilisant le mot-clé réservé <code>$event</code>. Ces événements DOM sont porteurs d'informations utilisables dans le composant.</p>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">p</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">"gestionDuClic($event)"</span>&gt;</span>lorem ipsum<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div></code></pre>
+<p>Dans le code ci-dessus, la méthode de composant <code>gestionDuClic()</code> recevra en argument l'événement DOM de type <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent"><code>MouseEvent</code></a>.</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/user-input#get-user-input-from-the-event-object">Passer un événement avec <code>$event</code></a></li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#event-and-event-handling-statements"><code>$event</code> et les déclarations de gestion d'événements</a></li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Créez un champ texte exploitant l'événement <code>keyup</code> pour exétuer une méthode du composant. Cette méthode doit recevoir en argument l'événement DOM.</p>
+<p>Dans la méthode vous devez typer l'argument reçu. Créez une propriété du composant qui recevra la propriété <a href="https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode"><code>keyCode</code></a> de l'événement reçu. Affichez cette propriété sous le champ dans le template.</p>
+<h2 id="partie-2">Partie 2</h2>
+<p>Créez une <code>&lt;div&gt;</code> et  donnez-lui une hauteur et une largeur en CSS.</p>
+<p>Ajoutez un gestionnaire d'événement <code>mousemove</code> sur la <code>&lt;div&gt;</code> associée à une méthode <code>suivre()</code> que vous devrez créer dans la classe du composant. Au lieu de passer l'événement lui-même en argument, passez directement les propriétés <code>x</code> et <code>y</code>. Dans Angular <a href="https://angular.io/guide/user-input#passing-event-is-a-dubious-practice">on évitera de passer l'événement lui-même au composant</a> afin d'éviter de faire porter au composant la responsabilité de connaître l'implémentation réelle du template. Cela facilite les tests unitaires et sécurise le composant pour des usages avec des <a href="https://angular.io/guide/service-worker-intro#angular-service-worker-introduction">Service Workers</a> par exemple.</p>
+<p>Dans le composant créez deux propriétés <code>x</code> et <code>y</code> qui seront mises à jour par la méthode <code>suivre()</code>. Affichez ces deux propriétés dans la <code>&lt;div&gt;</code>.</p>
+
+    </body>
+    </html>

@@ -4,6 +4,7 @@
 		<meta charset="utf-8"/>
 		<title>jQuery : Exercice 22</title>
 		<link rel="stylesheet" href="../src/styles1.css">
+		<script src="../../jquery.js"></script>
 		<script>
 			/*********************************
 			***********PRESENTATION***********
@@ -27,7 +28,34 @@
 
 			Utilisez les méthodes height(), width() et setInterval().
 			*/
+			$(function(){
+				var croissant = true;
+				var step = 0;
+				setInterval(function(){
+					if(($('#madiv').innerWidth() <= $('body').width() / 2 || $('#madiv').innerHeight() <= $('body').height() / 2) && croissant){
+						$('#madiv').width($('#madiv').width()+5);
+						$('#madiv').height($('#madiv').height()+5);
+						if(step==10){
+							$('#madiv').css('padding', parseInt($('#madiv').css('padding'))+5);
+							step = 0;
+						}
+					}
+					else{
+						croissant = false;
+						$('#madiv').width($('#madiv').width()-5);
+						$('#madiv').height($('#madiv').height()-5);
+						if(step==10){
+							$('#madiv').css('padding', parseInt($('#madiv').css('padding'))-5);
+							step = 0;
+						}
+						if($('#madiv').width()==5){
+							croissant = true;
+						}
+					}
+					step++;
+				}, 10);
 
+			});
 			/*
 			** 2 **
 			Améliorez le code, toutes les 10 secondes, le padding augmente de 5px.
@@ -40,7 +68,7 @@
 			Pour l'instant, le bloc augmente sans cesse de taille. Quand le bloc a une largeur supérieure à 50% de la largeur ou une hauteur supérieure à 50% de la hauteur de la fenêtre, inversé le mouvement :
 			_ toutes les secondes la largeur et la hauteur augmente de 5px
 			_ toutes les 10 secondes, le padding se réduit de 5px.
-
+			
 			Quand la div revient à sa dimension initiale, sa augmente à nouveau.
 
 			Utilisez les méthodes height(), innerHeight(), width(), innerWidth et setInterval().
@@ -53,9 +81,19 @@
 			Utilisez la méthode resize().
 			*/
 		</script>
+		<style>
+			#madiv{
+				background-color: lightcoral;
+				height: 10px;
+				padding: 10px;
+				width: 10px;
+			}
+		</style>
 	</head>
 	<body>
+		<div id="madiv">
 
+		</div>
 		<noscript>
 			<p>Veuillez activer JavaScript</p>
 		</noscript>

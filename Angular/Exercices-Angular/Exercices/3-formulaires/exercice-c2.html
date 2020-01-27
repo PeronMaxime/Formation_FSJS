@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : les formulaires - Exercice 1 - la directive `NgModel` et les références de template</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-formulaires---exercice-1---la-directive-ngmodel-et-les-r%c3%a9f%c3%a9rences-de-template">Angular : les formulaires - Exercice 1 - la directive <code>NgModel</code> et les références de template</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;exercice-c2&quot; dans le dossier <code>src/app/exercices/3-formulaires/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>Il existe 2 façons de gérer les formulaires dans Angular :</p>
+<ul>
+<li><a href="https://angular.io/guide/forms">Les formulaires pilotés par le template</a>.
+Les formulaires pilotés par le template sont utiles pour ajouter un formulaire simple à une application, tel qu'un formulaire d'inscription à une liste de diffusion. Ils sont faciles à ajouter à une application, mais ils ne sont pas aussi évolutifs que les formulaires réactifs. Si vous avez des exigences de base et une logique pouvant être gérées uniquement dans le template, utilisez des formulaires pilotés par le template.</li>
+<li><a href="https://angular.io/guide/reactive-forms">Les formulaires &quot;réactifs&quot;</a>. Les formulaires réactifs sont plus robustes : ils sont plus évolutifs, réutilisables et testables. Si les formulaires constituent un élément clé de votre application ou si vous utilisez déjà des modèles réactifs pour générer votre application, utilisez des formulaires réactifs.</li>
+</ul>
+<p>Dans cet exercice nous allons utiliser un formulaire piloté par le template pour découvrir l'utilisation des formulaire dans Angular avec la directive <code>NgModel</code>.</p>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li><a href="https://angular.io/api/forms/NgForm#description">Description de <code>NgForm</code></a>.
+<ul>
+<li><a href="https://angular.io/api/forms/NgForm#listening-for-form-submission">l'événement <code>ngSubmit</code></a>.</li>
+</ul>
+</li>
+<li><a href="https://angular.io/api/forms/NgModel"><code>NgModel</code></a>.</li>
+<li>Guide : <a href="https://angular.io/guide/forms">Les formulaires piloté par le template</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/forms-overview">Introduction aux formulaires dans Angular</a>.</li>
+<li>Guide : <a href="https://angular.io/guide/template-syntax#two-way-binding-">Liaison de données dans les 2 sens</a></li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Dans la classe du composant Créez une propriété <code>utilisateur</code> qui est un objet possédant les propriétés suivantes :</p>
+<ul>
+<li>Nom, de type texte,</li>
+<li>Prénom, de type texte,</li>
+<li>Adresse e-mail, de type texte,</li>
+<li>Âge, de type numérique.</li>
+</ul>
+<h2 id="partie-2">Partie 2</h2>
+<p>Dans le template, créez un formulaire comportant 4 champs qui correspondent aux propriétés de votre utilisateur, en utilisant le type d'input le mieux adapté.</p>
+<p>N'oubliez pas de spécifier un attribut <code>name</code> pour chacun de ces champs. En effet Angular utilise cet attribnut gérer la validation du champ.</p>
+<p>Utilisez la directive <code>NgModel</code> pour lier chaque champ à une propriété de votre objet <code>utilisateur</code>.</p>
+<p>Ajoutez un input de type <code>submit</code>.</p>
+<p>Observez, dans l'inspecteur du navigateur, les différentes classes associées à chaque champ lorsque vous modifiez leur valeur ou lorsque vous sortez du champ. Ces classes sont automatiquement ajoutées par Angular en fonction de l'état du champ (valide, invalide, modifé, etc.) et sont pratiques pour styler votre formulaire en fonction de son état.</p>
+<h2 id="partie-3">Partie 3</h2>
+<p>Pour chaque champ créez un paragraphe de texte et utilisez une expression pour afficher la propriété de l'objet initialisé correspondant au champ.</p>
+<h2 id="partie-4">Partie 4</h2>
+<p>Créez une référence de template (<a href="https://angular.io/guide/template-syntax#template-reference-variables-var"><em><code>template reference variable</code></em></a>) sur chaque champ. Pour exploiter la gestion des champs, associez à cette référence la valeur <code>ngModel</code>.</p>
+<h3 id="exemple">Exemple</h3>
+<pre><code class="language-html"><div>#monChampTexte="ngModel"
+</div></code></pre>
+<p>La référence créée n'est pas une référence à l'élément HTML en question mais contient des propriétés concernant l'état du contrôleur, comme par exemple <code>valid</code>, <code>pristine</code> ou <code>touched</code>. Ces propriété permettent de vérifier l'état du champ en code.</p>
+<h2 id="partie-5">Partie 5</h2>
+<p>La directive <code>ngForm</code> est automatiquement associée à chaque formulaire par Angular. Vous pouvez exploiter cette directive en créant une référence de template sur l'élément <code>form</code>.</p>
+<h3 id="exemple-1">Exemple</h3>
+<pre><code class="language-html"><div><span class="hljs-tag">&lt;<span class="hljs-name">form</span> #<span class="hljs-attr">formRef</span>=<span class="hljs-string">"ngForm"</span>&gt;</span>
+</div></code></pre>
+<p>La référence créée n'est pas une référence à l'élément <code>form</code> mais contient des propriétés concernant l'état du formulaire, comme par exemple <code>valid</code> ou <code>submitted</code>.</p>
+<p>Manipulez votre formulaire et observez ces propriétés en les affichant via une expression.</p>
+<p>Vous pouvez afficher l'ensemble les valeurs des champs de votre formulaire, en passant la propriété <code>value</code> de <code>ngForm</code> au filtre <code>json</code>.</p>
+<pre><code class="language-html"><div>{{ formRef.value | json }}
+</div></code></pre>
+
+    </body>
+    </html>

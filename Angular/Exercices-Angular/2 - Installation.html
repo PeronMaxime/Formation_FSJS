@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Installation de l'environnement Angular</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="installation-de-lenvironnement-angular">Installation de l'environnement Angular</h1>
+<h2 id="pr%c3%a9-requis--nodejs">Pré-requis : Node.js</h2>
+<p>On doit d'abord installer <a href="https://nodejs.org/">Node.js</a>, un environnement d'exécution en JavaScript utilisé pour créer des applications serveur, desktop ou embarquées.</p>
+<p>Node.js est essentiel parce qu'il installe le gestionnaire de paquets  <a href="https://www.npmjs.com/">npm</a> (<em>Node Package Manager</em>). Npm est le logiciel en ligne de commande avec lequel nous allons installer Angular et ses dépendances.</p>
+<p>C'est également Node.js qui nous permettra de disposer d'un serveur HTTP de test pour nos applications et d'exécuter les tâches de construction et de maintenance.</p>
+<p>Nous installerons la version LTS (<em>Long Term Support</em>) courante de Node.js et npm.</p>
+<p>Pour ce cours nous utiliserons les logiciels suivants dans les versions indiquées :</p>
+<ul>
+<li>Node.js 12.x (LTS)</li>
+<li>npm 6.x</li>
+<li>Angular 8.x</li>
+</ul>
+<h3 id="v%c3%a9rifier-la-bonne-installation-de-nodejs-et-npm">Vérifier la bonne installation de Node.js et npm</h3>
+<p>Version de Node.js installée</p>
+<pre><code class="language-language-bash"><div>node --version
+</div></code></pre>
+<p>Version de npm installée</p>
+<pre><code class="language-language-bash"><div>npm --version
+</div></code></pre>
+<h2 id="installation-du-cli-angular">Installation du CLI Angular</h2>
+<p>On utilisera le logiciel officiel proposé par Angular pour générer des applications et des composants Angular (components, services, directives, etc.), pour tester les applications avec un server de test, et pour produire la version à publier.</p>
+<p><a href="https://cli.angular.io/">Angular CLI</a> est un outil en ligne de commande (<em>Command Line Interface</em>), c'est-à-dire un programme sans interface graphique, qui s'utilise en saisissant des commandes en texte dans un terminal comme par exemple :</p>
+<ul>
+<li>Bash (Linux)</li>
+<li>Terminal (macOS)</li>
+<li>cmd (Windows)</li>
+<li>PowerShell (Windows 7+, Linux, macOS)</li>
+<li>Git Bash (Windows, Linux, macOS)</li>
+</ul>
+<p>On installe <a href="https://www.npmjs.com/package/@angular/cli">@angular/cli</a> globalement afin de pouvoir créer des projets Angular.</p>
+<pre><code class="language-language-bash"><div>npm install -g @angular/cli
+</div></code></pre>
+<h3 id="v%c3%a9rifier-la-version-install%c3%a9e">Vérifier la version installée</h3>
+<p>La commande créée lors de l'installation de @angular/cli s'appelle <code>ng</code>.</p>
+<p>Si l'installation a réussi, on a accès au programme en ligne de commande avec la commande <code>ng</code>. Pour le vérifier, on peut demander à afficher la version du programme.</p>
+<pre><code class="language-language-bash"><div>ng --version
+</div></code></pre>
+<h3 id="documentation">Documentation</h3>
+<p>Une documentation des commandes disponibles peut être affichée dans la console avec la commande</p>
+<pre><code class="language-language-bash"><div>ng help
+</div></code></pre>
+<p>Une <a href="https://angular.io/cli">documentation détaillée</a> est disponioble en ligne.</p>
+
+    </body>
+    </html>

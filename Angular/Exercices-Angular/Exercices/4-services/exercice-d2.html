@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Angular : Les services - Exercice D2 - ToDo App</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="angular--les-services---exercice-d2---todo-app">Angular : Les services - Exercice D2 - ToDo App</h1>
+<h2 id="pr%c3%a9paration">Préparation</h2>
+<p>Créez un nouveau composant nommé &quot;todo&quot; dans le dossier <code>src/app/exercices/4-services/</code>, en utilisant le <a href="https://angular.io/cli">CLI Angular</a>.</p>
+<p>Pour afficher ce composant, ajoutez le sélecteur correspondant dans le template du composant principal (<code>src/app/app.component.html</code>).</p>
+<h2 id="introduction">Introduction</h2>
+<p>Un des rôles des services dans Angular est de centraliser la logique applicative : on peut faire appel au même service dans plusieurs composants.</p>
+<p>Dans cet exercice vous créerez un service et deux composants qui l'exploitent.</p>
+<h3 id="documentation">Documentation</h3>
+<ul>
+<li>Guide : <a href="https://angular.io/guide/singleton-services">Singleton services</a></li>
+<li>Guide : <a href="https://angular.io/guide/architecture-services">Introduction aux services et à l'injection de dependances</a></li>
+<li>Guide : <a href="https://angular.io/guide/dependency-injection">L'injection de dépendances dans Angular</a></li>
+<li>Guide : <a href="https://angular.io/guide/providers">Providers</a></li>
+<li>Guide : <a href="https://angular.io/guide/architecture#services-and-dependency-injection">Services and dependency injection</a></li>
+<li>Guide : <a href="https://angular.io/guide/hierarchical-dependency-injection">Les injecteurs hiérarchiques</a></li>
+</ul>
+<h2 id="partie-1">Partie 1</h2>
+<p>Créez un service &quot;todo&quot;. Le service comporte une propriété qui est la liste de tâches à faire, ainsi qu'une méthode permettant d'ajouter une tâche à la liste.</p>
+<h2 id="partie-2">Partie 2</h2>
+<p>Créez deux nouveaux composants :</p>
+<ul>
+<li>todo-list</li>
+<li>todo-form</li>
+</ul>
+<p>Vous afficherez les deux composants dans le composant &quot;todo&quot;.</p>
+<h2 id="partie-3">Partie 3</h2>
+<p>Le composant &quot;todo-list&quot; doit injecter le service &quot;todo&quot; et afficher la liste des tâches à l'aide de la directive <code>ngFor</code>. Vous devez gérer le cas où la liste est vide en affichant un message.</p>
+<h2 id="partie-4">Partie 4</h2>
+<p>Le composant &quot;todo-form&quot; doit également injecter le service &quot;todo&quot; et propose un formulaire qui permet d'ajouter une tâche à la liste.</p>
+
+    </body>
+    </html>
